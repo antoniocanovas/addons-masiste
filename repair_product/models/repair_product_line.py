@@ -16,6 +16,6 @@ class RepairProductLine(models.Model):
                                 string='SN')
 
     partner_id = fields.Many2one('res.partner', related='repair_id.partner_id', string='Repairs')
-    state_id = fields.Selection(string='State', related='repair_id.state_id')
+    state_id = fields.Selection(string='State', related='repair_id.state')
     note = fields.Char(string='Note')
     scrap = fields.Binary(string='Scrap')
