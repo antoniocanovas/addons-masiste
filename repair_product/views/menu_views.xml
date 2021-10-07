@@ -39,7 +39,7 @@
         <field name="filter" eval="False"/>
         <field name="groups_id" eval="[(6, 0, [])]"/>
         <field name="limit">80</field>
-        <field name="name">ST</field>
+        <field name="name">Operations</field>
         <field name="res_model">repair.product.line</field>
         <field name="search_view_id" eval="repair_product_line_search"/>
         <field name="target">current</field>
@@ -48,9 +48,10 @@
     </record>
 
     <record id="menu_repair_products" model="ir.ui.menu">
+        <field name="action" ref="action_repair_product_line"/>
         <field name="active" eval="True"/>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
-        <field name="name">Products</field>
+        <field name="name">Operations</field>
         <field name="parent_id" ref="repair.menu_repair_order"/>
         <field name="sequence">5</field>
         <field name="web_icon" eval="False"/>
@@ -61,8 +62,8 @@
         <field name="active" eval="True"/>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
         <field name="name">Products</field>
-        <field name="parent_id" ref="menu_repair_products"/>
-        <field name="sequence">1</field>
+        <field name="parent_id" ref="repair.repair_menu_config"/>
+        <field name="sequence">98</field>
         <field name="web_icon" eval="False"/>
     </record>
 
@@ -71,12 +72,12 @@
         <field name="active" eval="True"/>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
         <field name="name">Lotes/NS</field>
-        <field name="parent_id" ref="menu_repair_products"/>
-        <field name="sequence">2</field>
+        <field name="parent_id" ref="repair.repair_menu_config"/>
+        <field name="sequence">99</field>
         <field name="web_icon" eval="False"/>
     </record>
 
-    <record id="menu_repair_products_line" model="ir.ui.menu">
+    <!--<record id="menu_repair_products_line" model="ir.ui.menu">
         <field name="action" ref="action_repair_product_line"/>
         <field name="active" eval="True"/>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
@@ -84,6 +85,6 @@
         <field name="parent_id" ref="menu_repair_products"/>
         <field name="sequence">3</field>
         <field name="web_icon" eval="False"/>
-    </record>
+    </record>-->
 
 </odoo>
