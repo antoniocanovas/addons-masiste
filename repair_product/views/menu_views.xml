@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="action_repair_product" model="ir.actions.act_window">
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">action</field>
+        <field name="domain" eval="False"/>
+        <field name="filter" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="limit">80</field>
+        <field name="name">Products</field>
+        <field name="res_model">repair.product</field>
+        <!--<field name="search_view_id" eval="isets_tree_search"/>-->
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_repair_product_lot" model="ir.actions.act_window">
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">action</field>
+        <field name="domain" eval="False"/>
+        <field name="filter" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="limit">80</field>
+        <field name="name">Lotes / NS</field>
+        <field name="res_model">repair.product.lot</field>
+        <!--<field name="search_view_id" eval="isets_tree_search"/>-->
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_repair_product_line" model="ir.actions.act_window">
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">action</field>
+        <field name="domain" eval="False"/>
+        <field name="context">{"search_default_progress":1}</field>
+        <field name="filter" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="limit">80</field>
+        <field name="name">ST</field>
+        <field name="res_model">repair.product.line</field>
+        <field name="search_view_id" eval="repair_product_line_search"/>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_repair_products" model="ir.ui.menu">
+        <field name="active" eval="True"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <field name="name">Products</field>
+        <field name="parent_id" ref="repair.menu_repair_order"/>
+        <field name="sequence">5</field>
+        <field name="web_icon" eval="False"/>
+    </record>
+
+    <record id="menu_repair_products_products" model="ir.ui.menu">
+        <field name="action" ref="action_repair_product"/>
+        <field name="active" eval="True"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <field name="name">Products</field>
+        <field name="parent_id" ref="menu_repair_products"/>
+        <field name="sequence">1</field>
+        <field name="web_icon" eval="False"/>
+    </record>
+
+   <record id="menu_repair_products_lot" model="ir.ui.menu">
+        <field name="action" ref="action_repair_product_lot"/>
+        <field name="active" eval="True"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <field name="name">Lotes/NS</field>
+        <field name="parent_id" ref="menu_repair_products"/>
+        <field name="sequence">2</field>
+        <field name="web_icon" eval="False"/>
+    </record>
+
+    <record id="menu_repair_products_line" model="ir.ui.menu">
+        <field name="action" ref="action_repair_product_line"/>
+        <field name="active" eval="True"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+        <field name="name">ST</field>
+        <field name="parent_id" ref="menu_repair_products"/>
+        <field name="sequence">3</field>
+        <field name="web_icon" eval="False"/>
+    </record>
+
+</odoo>

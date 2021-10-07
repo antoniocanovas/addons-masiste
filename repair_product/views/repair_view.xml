@@ -1,63 +1,111 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="custom_repair_order_tree_view" model="ir.ui.view">
-        <field name="name">repair.order.tree.custom</field>
-        <field name="model">repair.order</field>
-        <field name="inherit_id" ref="repair.view_repair_order_tree" />
-        <field name="arch" type="xml">
-            <field name="product_id" position="after">
-                <field
-                    name="analytic_account_id"
-                    groups="analytic.group_analytic_accounting"
-                />
-            </field>
-        </field>
-    </record>
+
     <record id="custom_repair_order_form_view" model="ir.ui.view">
         <field name="name">repair.order.form.custom</field>
         <field name="model">repair.order</field>
         <field name="inherit_id" ref="repair.view_repair_order_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//page[@name='extra_info']/group/group[1]/field[@name='move_id']"
-                position="after"
+                expr="//notebook/page[@name='parts']"
+                position="before"
             >
-                <field
-                    name="analytic_account_id"
-                    groups="analytic.group_analytic_accounting"
-                />
+                <page string="Products" name="products">
+                        <field name="repair_line_ids" >
+                            <tree string="Product Lines" editable="bottom">
+                                <field name="repair_product_id"/>
+                                <field name="name"/>
+                                <field name="repair_sn"
+                                       attrs="{'readonly':[('repair_product_id', '=', False)]}"
+                                       domain="[('repair_product_id', '=', repair_product_id)]"
+                                       context="{'default_repair_product_id': repair_product_id}"/>
+                                <field name="scrap"/>
+                            </tree>
+                        </field>
+                    <group>
+                        <field name="date_out"/>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
-    <record id="custom_view_repair_order_filter" model="ir.ui.view">
-        <field name="name">repair.order.select.custom</field>
-        <field name="model">repair.order</field>
-        <field name="inherit_id" ref="repair.view_repair_order_form_filter" />
+
+    <record id="repair_product_line_search" model="ir.ui.view">
+        <field name="name">repair.product.line.search</field>
+        <field name="model">repair.product.line</field>
         <field name="arch" type="xml">
-            <xpath expr='//field[@name="product_id"]' position="after">
-                <field
-                    name="analytic_account_id"
-                    groups="analytic.group_analytic_accounting"
-                />
-            </xpath>
-            <xpath expr="//filter[@name='product']" position="after">
-                <filter
-                    string="Analytic Account"
-                    name="analytic_account"
-                    domain="[]"
-                    context="{'group_by': 'analytic_account_id'}"
-                    groups="analytic.group_analytic_accounting"
-                />
-            </xpath>
-            <xpath expr="//filter[@name='product']" position="after">
-                <filter
-                    string="Analytic Account"
-                    name="analytic_account"
-                    domain="[]"
-                    context="{'group_by': 'analytic_account_id'}"
-                    groups="analytic.group_analytic_accounting"
-                />
-            </xpath>
+            <search string="Search repairs">
+                <field name="date_out" filter_domain="[('date_out', 'ilike', self)]"/>
+                <field name="state" filter_domain="[('state', 'ilike', self)]"/>
+                <field name="scrap" filter_domain="[('scrap', 'ilike', self)]"/>
+                <separator/>
+                <filter string="In progress" name="progress" domain="[('date_out', '=', False)]"/>
+                <filter string="Delivery" name="delivery" domain="[('state', 'in', ['done','cancel']),
+                ('date_out', '=', False), ('scrap' , '=' , False)]"/>
+            </search>
         </field>
     </record>
+
+    <record id="repair_product_tree" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <tree name="product_tree" string="Product">
+                <field name="name"/>
+                <field name="lot_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product</field>
+        <field name="name">Repair Product</field>
+        <field name="priority">16</field>
+        <field name="type">tree</field>
+    </record>
+
+    <record id="repair_product_SN_tree" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <tree name="product_tree" string="Product">
+                <field name="name"/>
+                <field name="repair_product_id"/>
+                <field name="repair_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product.lot</field>
+        <field name="name">Repair Product SN</field>
+        <field name="priority">16</field>
+        <field name="type">tree</field>
+    </record>
+
+    <record id="repair_product_SN_tree" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <tree name="product_tree" string="Product">
+                <field name="repair_id"/>
+                <field name="name"/>
+                <field name="repair_sn"/>
+                <field name="date_out"/>
+                <field name="state"/>
+                <field name="scrap"/>
+            </tree>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product.line</field>
+        <field name="name">Repair Product Line</field>
+        <field name="priority">16</field>
+        <field name="type">tree</field>
+    </record>
+
 </odoo>

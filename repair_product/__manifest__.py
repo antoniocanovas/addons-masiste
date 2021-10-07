@@ -12,8 +12,10 @@
     "license": "AGPL-3",
     "depends": ["repair"],
     "data": [
-        #"views/repair_view.xml",
-        #"views/analytic_account_view.xml"
+        "security/ir.model.access.csv",
+        "views/repair_view.xml",
+        "views/menu_views.xml",
+        "views/company_view.xml"
     ],
     "installable": True,
 }
