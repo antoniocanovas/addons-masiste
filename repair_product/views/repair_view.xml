@@ -7,21 +7,21 @@
         <field name="inherit_id" ref="repair.view_repair_order_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//notebook/page[@name='parts']"
-                position="before"
+                    expr="//notebook/page[@name='parts']"
+                    position="before"
             >
                 <page string="Products" name="products">
-                        <field name="repair_line_ids" >
-                            <tree string="Product Lines" editable="bottom">
-                                <field name="repair_product_id"/>
-                                <field name="name"/>
-                                <field name="repair_sn"
-                                       attrs="{'readonly':[('repair_product_id', '=', False)]}"
-                                       domain="[('repair_product_id', '=', repair_product_id)]"
-                                       context="{'default_repair_product_id': repair_product_id}"/>
-                                <field name="scrap"/>
-                            </tree>
-                        </field>
+                    <field name="repair_line_ids" >
+                        <tree string="Product Lines" editable="bottom">
+                            <field name="repair_product_id"/>
+                            <field name="name"/>
+                            <field name="lot_id"
+                                   attrs="{'readonly':[('repair_product_id', '=', False)]}"
+                                   domain="[('repair_product_id', '=', repair_product_id)]"
+                                   context="{'default_repair_product_id': repair_product_id}"/>
+                            <field name="scrap"/>
+                        </tree>
+                    </field>
                     <group>
                         <field name="date_out"/>
                     </group>
@@ -65,12 +65,12 @@
         <field name="type">tree</field>
     </record>
 
-    <record id="repair_product_SN_tree" model="ir.ui.view">
+    <record id="repair_product_lot_tree" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
             <tree name="product_tree" string="Product">
-                <field name="name"/>
                 <field name="repair_product_id"/>
+                <field name="name"/>
                 <field name="repair_ids" widget="many2many_tags"/>
             </tree>
         </field>
@@ -85,16 +85,43 @@
         <field name="type">tree</field>
     </record>
 
+    <record id="repair_product_lot_form" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <form string="Repair product Lots">
+                <sheet string="Repairs product lots">
+                    <h1>
+                        <group><field name="name"/></group>
+                    </h1>
+                    <h2>
+                        <group><field name="repair_product_id"/></group>
+                    </h2>
+                    <field name="repair_ids" readonly="1"/>
+                </sheet>
+            </form>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product.lot</field>
+        <field name="name">Default View repair.product.lot</field>
+        <field name="priority">16</field>
+        <field name="type">form</field>
+    </record>
+
     <record id="repair_product_line_tree" model="ir.ui.view">
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
-            <tree name="product_tree" string="Product">
+            <tree name="product_tree" string="Product" multi_edit="1" sample="1" create="false">
                 <field name="repair_id"/>
-                <field name="name"/>
-                <field name="repair_sn"/>
-                <field name="date_out"/>
                 <field name="state"/>
+                <field name="name" optional="show"/>
+                <field name="repair_product_id" optional="hide"/>
+                <field name="lot_id"/>
                 <field name="scrap"/>
+                <field name="date_out"/>
             </tree>
         </field>
         <field name="field_parent" eval="False"/>
@@ -106,6 +133,69 @@
         <field name="name">Repair Product Line</field>
         <field name="priority">16</field>
         <field name="type">tree</field>
+    </record>
+
+    <record id="repair_product_line_form" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <form string="Repair operations" create="false">
+                <sheet string="Repairs order">
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="repair_id" readonly="1"/>
+                            <field name="partner_id"/>
+                            <field name="lot_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="scrap"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="repair_product_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="date_out"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product.line</field>
+        <field name="name">Default View repair.product.line</field>
+        <field name="priority">16</field>
+        <field name="type">form</field>
+    </record>
+
+    <record id="repair_product_form" model="ir.ui.view">
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <form string="Repair products">
+                <sheet string="Repairs products">
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <field name="lot_ids" readonly="1">
+                        <tree>
+                            <field name="name" string="Lots"/>
+                            <field name="repair_ids" widget="many2many_tags"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="inherit_id" eval="False"/>
+        <field name="key" eval="False"/>
+        <field name="mode">primary</field>
+        <field name="model">repair.product</field>
+        <field name="name">Default View repair.product</field>
+        <field name="priority">16</field>
+        <field name="type">form</field>
     </record>
 
 </odoo>

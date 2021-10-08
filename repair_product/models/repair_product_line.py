@@ -11,13 +11,13 @@ class RepairProductLine(models.Model):
 
     repair_id = fields.Many2one('repair.order', string='Repair Order')
     repair_product_id = fields.Many2one('repair.product', string='Product')
-    repair_sn = fields.Many2one('repair.product.lot',
+    lot_id = fields.Many2one('repair.product.lot',
                                 string='SN')
 
-    partner_id = fields.Many2one('res.partner', related='repair_id.partner_id', string='Repairs')
+    partner_id = fields.Many2one('res.partner', related='repair_id.partner_id', string='Partner')
     state = fields.Selection(string='State', related='repair_id.state')
     date_out = fields.Datetime(string='Date out', related='repair_id.date_out')
-    note = fields.Char(string='Note')
+    #note = fields.Char(string='Note')
     scrap = fields.Boolean(string='Scrap')
 
     @api.depends('repair_product_id')
