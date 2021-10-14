@@ -2,7 +2,7 @@
 
 <odoo>
     <data>
-         <record id="repair.repair_for_client_report_document" model="ir.ui.view">
+         <record id="repair_for_client_report_document" model="ir.ui.view">
             <field name="name">Reparaciones para clientes sin tabla de productos</field>
             <field name="inherit_id" ref="repair.report_repairorder"/>
             <field name="arch" type="xml">
