@@ -16,7 +16,7 @@
         "views/repair_view.xml",
         "views/menu_views.xml",
         "views/company_view.xml",
-        "views/template.xml",
+        "views/repair_for_client_report_document.xml",
         "views/menu_report_views.xml"
     ],
     "installable": True,
