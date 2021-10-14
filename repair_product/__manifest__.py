@@ -15,7 +15,9 @@
         "security/ir.model.access.csv",
         "views/repair_view.xml",
         "views/menu_views.xml",
-        "views/company_view.xml"
+        "views/company_view.xml",
+        "views/template.xml",
+        "views/menu_report_views.xml"
     ],
     "installable": True,
 }
