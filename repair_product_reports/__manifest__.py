@@ -14,6 +14,7 @@
         "views/report_repairorder_extended.xml",
         "views/templates.xml",
         "views/report_repairorder_products.xml",
+        "data/paper_sticker.xml"
     ],
     "installable": True,
 }

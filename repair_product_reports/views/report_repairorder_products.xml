@@ -11,6 +11,17 @@
             <field name="binding_model_id" ref="repair.model_repair_order"/>
             <field name="binding_type">report</field>
         </record>
+        <record id="repairorder_products_report_sticker" model="ir.actions.report">
+            <field name="name">Sticker</field>
+            <field name="model">repair.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">repair_product_reports.report_repairorder_sticker_report</field>
+            <field name="report_file">repair_product_reports.report_repairorder_sticker_report</field>
+            <field name="print_report_name">( object.state == 'draft' and 'sticker - %s' % (object.name) or 'Orden de Reparación - %s' % (object.name))</field>
+            <field name="binding_model_id" ref="repair.model_repair_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
 
     </data>
 </odoo>
