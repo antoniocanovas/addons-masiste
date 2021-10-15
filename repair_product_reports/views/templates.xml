@@ -56,17 +56,17 @@
                         <table class="table table-sm o_main_table">
                             <thead>
                                 <tr>
-                                    <th class="text-right">Description</th>
-                                    <th class="text-right">SN</th>
+                                    <th>Description</th>
+                                    <th>SN</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-if="o.repair_line_ids">
                                     <tr t-foreach="o.repair_line_ids" t-as="line">
-                                        <td class="text-right">
+                                        <td>
                                             <span t-field="line.name"/>
                                         </td>
-                                        <td class="text-right">
+                                        <td>
                                             <span t-field="line.lot_id"/>
                                         </td>
                                     </tr>
