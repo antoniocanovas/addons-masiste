@@ -1,0 +1,19 @@
+<odoo>
+
+    <data>
+        <record id="paper-sticker" model="report.paperformat">
+            <field name="name">A4-UTE</field>
+            <!--<field name="format">A4 0 210 x 297 mm, 8,26 x 11,69 pulgadas</field>-->
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">8</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(6, 0, [ref('albaran_ute.albaran_ute_report')])]"/>
+        </record>
+    </data>
+
+
+</odoo>

@@ -13,7 +13,7 @@
     "data": [
         "views/report_repairorder_extended.xml",
         "views/templates.xml",
-        "views/report_repairorder_products.xml"
+        "views/report_repairorder_products.xml",
     ],
     "installable": True,
 }
