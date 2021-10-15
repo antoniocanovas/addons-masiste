@@ -11,7 +11,9 @@
     "license": "AGPL-3",
     "depends": ["repair","repair_product"],
     "data": [
-        "views/report_repairorder_extended.xml"
+        "views/report_repairorder_extended.xml",
+        "views/templates.xml",
+        "views/report_repairorder_products.xml"
     ],
     "installable": True,
 }
