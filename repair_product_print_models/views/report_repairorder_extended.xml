@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<odoo>
+    <data>
+         <record id="repair_for_client_report_document" model="ir.ui.view">
+            <field name="name">Reparaciones para clientes sin tabla de productos</field>
+            <field name="inherit_id" ref="repair.report_repairorder"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='informations']" position="replace"/>
+                <xpath expr="//table[@class='table table-sm o_main_table']" position="replace"/>
+                <xpath expr="//p[@t-field='o.quotation_notes']" position="replace"/>
+                <xpath expr="//h2[1]" position="after">
+                    <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
+                </xpath>
+            </field>
+         </record>
+
+    </data>
+</odoo>
