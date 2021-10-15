@@ -10,7 +10,7 @@
                 <xpath expr="//table[@class='table table-sm o_main_table']" position="replace"/>
                 <xpath expr="//p[@t-field='o.quotation_notes']" position="replace"/>
                 <xpath expr="//h2[1]" position="after">
-                    <p t-field="o.quotation_notes"/>
+                    <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
                 </xpath>
             </field>
          </record>
