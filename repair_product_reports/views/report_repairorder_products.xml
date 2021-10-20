@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="repairorder_products_report" model="ir.actions.report">
+        <!--<record id="repairorder_products_report" model="ir.actions.report">
             <field name="name">Presupuesto Reparación productos</field>
             <field name="model">repair.order</field>
             <field name="report_type">qweb-pdf</field>
@@ -10,7 +10,7 @@
             <field name="print_report_name">( object.state == 'draft' and 'Presupuesto de Reparación - %s' % (object.name) or 'Orden de Reparación - %s' % (object.name))</field>
             <field name="binding_model_id" ref="repair.model_repair_order"/>
             <field name="binding_type">report</field>
-        </record>
+        </record>-->
         <record id="repairorder_products_report_sticker" model="ir.actions.report">
             <field name="name">Sticker</field>
             <field name="model">repair.order</field>
