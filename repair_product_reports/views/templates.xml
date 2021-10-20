@@ -106,17 +106,17 @@
                 <div id="sticker" class="row mt32 mb32" style="line-height : 10px;margin-top: 25px;">
                     <div class="col-3 bm-2" style="margin-top: 25px;">
                         <t t-if="o.name">
-                            <p><strong>Repair Number:</strong></p>
-                            <span t-field="o.name"/>
+                            <!--<p><strong>Repair Number:</strong></p>-->
+                            <strong><span t-field="o.name"/></strong>
                         </t>
                     </div>
                     <div class="col-3 bm-2">
-                        <p><strong>Customer:</strong></p>
+                        <!--<p><strong>Customer:</strong></p>-->
                         <span t-field="o.partner_id"/>
                     </div>
                     <div class="col-3 bm-2">
-                        <p><strong>Date:</strong></p>
-                        <span t-field="o.create_date"/>
+                        <!--<p><strong>Date:</strong></p>-->
+                        <span style="font-size:9px;" t-field="o.create_date"/>
                     </div>
                 </div>
 
