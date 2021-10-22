@@ -54,16 +54,19 @@
                         </tbody>
                     </table>
                     <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
-                    <div id="signs" class="row mt128 mb128">
-                        <div class="col-2 bm-1">
-                            <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
-                            <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
-                        </div>
-                        <div class="col-2 bm-1">
-                            <strong>Firma cliente:</strong>
-                        </div>
-                    </div>
-
+                    <table class="table table-sm o_main_table">
+                        <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
+                                        <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
+                                    </td>
+                                    <td>
+                                        <strong>Firma cliente:</strong>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
                     <div class="oe_structure"/>
                 </div>
             </t>
