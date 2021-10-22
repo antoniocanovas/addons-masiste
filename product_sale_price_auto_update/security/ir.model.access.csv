@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_repair_product,repair product user,repair_product.model_repair_product,base.group_user,1,1,1,1
+access_repair_product_lot,repair product lot user,repair_product.model_repair_product_lot,base.group_user,1,1,1,1
+access_repair_product_line,repair product line user,repair_product.model_repair_product_line,base.group_user,1,1,1,1

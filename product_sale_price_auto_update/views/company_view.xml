@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="custom_company_defalt_pricelist_form_view" model="ir.ui.view">
+        <field name="name">company.default.product.pricelist</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <xpath
+                    expr="//notebook/page[@name='general_info']"
+                    position="after">
+
+                <page string="Pricelist" name="pricelist">
+                    <group>
+                        <field name="default_pricelist_id"></field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
