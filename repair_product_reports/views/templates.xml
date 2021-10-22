@@ -31,14 +31,11 @@
                     </h2>
 
                     <div id="informations" class="row mt32 mb32">
-                        <div t-if="o.product_id.name" class="col-3 bm-1">
+                        <div t-if="o.product_id.name" class="col-2 bm-1">
                             <strong>Producto a reparar:</strong>
                         </div>
-                        <div t-if="o.guarantee_limit" class="col-3 bm-1">
+                        <div t-if="o.guarantee_limit" class="col-2 bm-1">
                             <strong>Garantía:</strong><span t-field="o.guarantee_limit" class="m-0"/>
-                        </div>
-                        <div class="col-3 bm-1">
-                            <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
                         </div>
                     </div>
 
@@ -57,7 +54,16 @@
                         </tbody>
                     </table>
                     <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
-                    <p><strong>Empleado:</strong> <span t-field="user_id.name"/></p>
+                    <div id="signs" class="row mt32 mb32">
+                        <div class="col-2 bm-1">
+                            <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
+                            <strong>Por Masiste:</strong> <span t-field="user_id.name"/>
+                        </div>
+                        <div class="col-2 bm-1">
+                            <strong>Firma cliente:</strong><span t-field="o.guarantee_limit" class="m-0"/>
+                        </div>
+                    </div>
+
                     <div class="oe_structure"/>
                 </div>
             </t>
