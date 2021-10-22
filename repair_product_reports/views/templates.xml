@@ -59,6 +59,8 @@
                             <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
                             <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
                         </div>
+                        <div>
+
                         <div/>
                         <div class="col-3 bm-2">
                             <strong>Firma cliente:</strong>
