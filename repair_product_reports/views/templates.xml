@@ -55,13 +55,13 @@
                     </table>
                     <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
                     <div id="signs" class="row mt32 mb32">
-                        <div class="col-4 bm-2">
+                        <div class="col-3 bm-2">
                             <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
-                            <strong>Por Masiste:</strong> <span t-field="user_id.name"/>
+                            <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
                         </div>
                         <div/>
-                        <div class="col-4 bm-2">
-                            <strong>Firma cliente:</strong><span t-field="o.guarantee_limit" class="m-0"/>
+                        <div class="col-3 bm-2">
+                            <strong>Firma cliente:</strong>
                         </div>
                     </div>
 
