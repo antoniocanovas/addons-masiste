@@ -2,7 +2,7 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 {
-    "name": "Repair Product",
+    "name": "Repair Custom",
     "summary": "Repair products not sold by us,"
                " these ones can be always different and must not be included in product.product.",
     "version": "14.0.1.0.0",

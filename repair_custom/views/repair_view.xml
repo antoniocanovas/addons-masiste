@@ -27,6 +27,13 @@
                     </group>
                 </page>
             </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='parts']/field[@name='operations']" position="attributes">
+                <attribute name="attrs">{"readonly": [["state","in",["done","cancel"]]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='fees_lines']" position="attributes">
+                <attribute name="attrs">{"readonly": [["state","in",["done","cancel"]]]}</attribute>
+            </xpath>
+
         </field>
     </record>
 
