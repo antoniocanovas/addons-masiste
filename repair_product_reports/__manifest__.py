@@ -9,7 +9,7 @@
     "author": "Pedro Guirao, ",
     "website": "https://github.com/OCA/account-analytic",
     "license": "AGPL-3",
-    "depends": ["repair","repair_product"],
+    "depends": ["repair","repair_custom"],
     "data": [
         "views/report_repairorder_extended.xml",
         "views/templates.xml",
