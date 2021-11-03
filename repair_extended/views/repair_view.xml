@@ -31,21 +31,30 @@
                     expr="//notebook/page[@name='products']"
                     position="after"
             >
-                <page string="Lines" name="lines">
+                <page string="Quotation" name="quotation">
                     <field name="quotation_line_ids" >
                         <tree string="Quotation Lines" editable="bottom">
-                            <field name="repair_id"/>
+                            <field name="repair_id" invisible="1"/>
                             <field name="product_id"/>
+                            <field name="name"/>
                             <field name="product_qty"/>
                             <field name="product_uom_id"/>
                             <field name="price_unit"/>
-                            <field name="tax_ids"/>
+                            <field name="tax_ids" widget="many2many_tags" optional="hidden"/>
                             <field name="price_subtotal"/>
-                            <field name="price_total"/>
+                            <field name="price_total" optional="hidden"/>
                         </tree>
                     </field>
-                    <group>
-                        <field name="date_out"/>
+                    <group name="note_group" col="6" class="mt-2 mt-md-0">
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="quotation_total">
+                            <field name="quotation_price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="quotation_taxes" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="quotation_price_total"/>
+                            </div>
+                            <field name="quotation_price_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <div class="oe_clear"/>
                     </group>
                 </page>
             </xpath>
