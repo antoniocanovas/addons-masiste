@@ -13,13 +13,13 @@
                 <page string="Products" name="products">
                     <field name="repair_line_ids" >
                         <tree string="Product Lines" editable="bottom">
-                            <field name="repair_product_id"/>
-                            <field name="name"/>
-                            <field name="lot_id"
+                            <field name="repair_product_id" required="1"/>
+                            <field name="name" required="1"/>
+                            <field name="lot_id" required="1"
                                    attrs="{'readonly':[('repair_product_id', '=', False)]}"
                                    domain="[('repair_product_id', '=', repair_product_id)]"
                                    context="{'default_repair_product_id': repair_product_id}"/>
-                            <field name="scrap"/>
+                            <field name="scrap" required="1"/>
                         </tree>
                     </field>
                     <group>
@@ -32,15 +32,18 @@
                     position="after"
             >
                 <page string="Quotation" name="quotation">
-                    <field name="quotation_line_ids" >
+                    <group>
+                        <field name="print_quotation_lines"/>
+                    </group>
+                    <field name="quotation_line_ids">
                         <tree string="Quotation Lines" editable="bottom">
                             <field name="repair_id" invisible="1"/>
-                            <field name="product_id"/>
-                            <field name="name"/>
-                            <field name="product_qty"/>
-                            <field name="product_uom_id"/>
-                            <field name="price_unit"/>
-                            <field name="tax_ids" widget="many2many_tags" optional="hidden"/>
+                            <field name="product_id" required="1"/>
+                            <field name="name" required="1"/>
+                            <field name="product_qty" required="1"/>
+                            <field name="product_uom_id" required="1"/>
+                            <field name="price_unit" required="1"/>
+                            <field name="tax_ids" required="1" widget="many2many_tags" optional="hidden"/>
                             <field name="price_subtotal"/>
                             <field name="price_total" optional="hidden"/>
                         </tree>
