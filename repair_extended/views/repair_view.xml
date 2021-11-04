@@ -15,14 +15,14 @@
                         <tree string="Product Lines" editable="bottom">
                             <field name="repair_product_id" required="1"/>
                             <field name="name" required="1"/>
-                            <field name="lot_id" required="1"
+                            <field name="lot_id"
                                    attrs="{'readonly':[('repair_product_id', '=', False)]}"
                                    domain="[('repair_product_id', '=', repair_product_id)]"
                                    context="{'default_repair_product_id': repair_product_id}"/>
                             <field name="scrap" required="1"/>
                         </tree>
                     </field>
-                    <group>
+                    <group colspan="4">
                         <field name="date_out"/>
                     </group>
                 </page>
