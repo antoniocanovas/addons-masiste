@@ -13,7 +13,7 @@
             <field name="margin_right">5</field>
             <field name="header_spacing">10</field>
             <field name="dpi">90</field>
-            <field name="report_ids" eval="[(6, 0, [ref('repair_product_reports.repairorder_products_report_sticker')])]"/>
+            <field name="report_ids" eval="[(6, 0, [ref('repair_extended_reports.repairorder_extended_report_sticker')])]"/>
         </record>
     </data>
 
