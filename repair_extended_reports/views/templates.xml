@@ -71,13 +71,13 @@
                     <t t-if="o.print_quotation_lines">
                         <div id="informations" class="row mt32 mb32">
                             <div class="col-3 bm-1">
-                                <strong>Product to Repair:</strong>
+                                <strong>Producto a Reparar:</strong>
                             </div>
                             <div t-if="o.guarantee_limit" class="col-3 bm-1">
-                                <strong>Warranty:</strong><span t-field="o.guarantee_limit" class="m-0"/>
+                                <strong>Garantía:</strong><span t-field="o.guarantee_limit" class="m-0"/>
                             </div>
                             <div class="col-3 bm-1">
-                                <strong>Printing Date:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
+                                <strong>Fecha de impresión:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
                             </div>
                         </div>
                         <table class="table table-sm o_main_table">
@@ -102,16 +102,16 @@
                                         <td>
                                             <span t-field="line.name"/>
                                         </td>
-                                        <td>
+                                        <td class="text-right">
                                             <span t-field="line.product_qty"/>
                                         </td>
                                         <td>
                                             <span t-field="line.product_uom_id"/>
                                         </td>
-                                        <td>
+                                        <td class="text-right">
                                             <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
                                         </td>
-                                        <td>
+                                        <td class="text-right">
                                             <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
                                         </td>
                                     </tr>
