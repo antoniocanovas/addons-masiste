@@ -103,7 +103,7 @@
                                             <span t-field="line.name"/>
                                         </td>
                                         <td>
-                                            <span t-field="line.product_qyt"/>
+                                            <span t-field="line.product_qty"/>
                                         </td>
                                         <td>
                                             <span t-field="line.product_uom_id"/>
