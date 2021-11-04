@@ -109,10 +109,10 @@
                                             <span t-field="line.product_uom_id"/>
                                         </td>
                                         <td>
-                                            <span t-field="line.price_unit"/>
+                                            <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
                                         </td>
                                         <td>
-                                            <span t-field="line.price_subtotal"/>
+                                            <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
                                         </td>
                                     </tr>
                                 </t>
