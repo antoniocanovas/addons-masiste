@@ -100,7 +100,7 @@
                                             <span t-field="line.product_id"/>
                                         </td>
                                         <td>
-                                            <span t-field="line.description"/>
+                                            <span t-field="line.name"/>
                                         </td>
                                         <td>
                                             <span t-field="line.product_qyt"/>
