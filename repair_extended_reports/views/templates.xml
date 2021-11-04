@@ -3,7 +3,7 @@
 <odoo>
     <data>
 
-        <template id="repair_product_reports.report_repairorder_collect_lines">
+        <template id="repair_extended_reports.report_repairorder_collect_lines">
             <t t-set="o" t-value="doc"/>
             <t t-call="web.external_layout">
                 <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
@@ -29,59 +29,137 @@
                     <h2>
                         <center><span style="" t-field="o.name"/></center>
                     </h2>
-
-                    <div id="informations" class="row mt32 mb32">
-                        <div t-if="o.product_id.name" class="col-3 bm-1">
-                            <strong>Producto a reparar:</strong>
+                    <t t-if="not o.print_quotation_lines">
+                        <div id="informations" class="row mt32 mb32">
+                            <div t-if="o.product_id.name" class="col-3 bm-1">
+                                <strong>Producto a reparar:</strong>
+                            </div>
+                            <div t-if="o.guarantee_limit" class="col-3 bm-1">
+                                <strong>Garantía:</strong><span t-field="o.guarantee_limit" class="m-0"/>
+                            </div>
                         </div>
-                        <div t-if="o.guarantee_limit" class="col-3 bm-1">
-                            <strong>Garantía:</strong><span t-field="o.guarantee_limit" class="m-0"/>
-                        </div>
-                    </div>
 
-                    <table class="table table-sm o_main_table">
-                        <tbody>
-                                <t t-if="o.repair_line_ids">
-                                    <tr t-foreach="o.repair_line_ids" t-as="line">
+                        <table class="table table-sm o_main_table">
+                            <tbody>
+                                    <t t-if="o.repair_line_ids">
+                                        <tr t-foreach="o.repair_line_ids" t-as="line">
+                                            <td>
+                                                <span t-field="line.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.lot_id"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                            </tbody>
+                        </table>
+                        <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
+                        <table class="table table-sm o_main_table">
+                            <tbody>
+                                    <tr>
                                         <td>
-                                            <span t-field="line.name"/>
+                                            <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
+                                            <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
                                         </td>
                                         <td>
-                                            <span t-field="line.lot_id"/>
+                                            <strong>Firma cliente:</strong>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-if="o.print_quotation_lines">
+                        <div id="informations" class="row mt32 mb32">
+                            <div class="col-3 bm-1">
+                                <strong>Product to Repair:</strong>
+                            </div>
+                            <div t-if="o.guarantee_limit" class="col-3 bm-1">
+                                <strong>Warranty:</strong><span t-field="o.guarantee_limit" class="m-0"/>
+                            </div>
+                            <div class="col-3 bm-1">
+                                <strong>Printing Date:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Descripción</th>
+                                    <th class="text-right">cantidad</th>
+                                    <th class="text-center">Udm</th>
+                                    <t t-if="o.invoice_method != 'none'">
+                                        <th class="text-right">Precio unitario</th>
+                                        <th class="text-right">Subtotal</th>
+                                    </t>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-if="o.quotation_line_ids">
+                                    <tr t-foreach="o.quotation_line_ids" t-as="line">
+                                        <td>
+                                            <span t-field="line.product_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.description"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.product_qyt"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.product_uom_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.price_unit"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.price_subtotal"/>
                                         </td>
                                     </tr>
                                 </t>
-                        </tbody>
-                    </table>
-                    <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
-                    <table class="table table-sm o_main_table">
-                        <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>Fecha:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
-                                        <p><strong>Por Masiste:</strong> <span t-field="user_id.name"/></p>
-                                    </td>
-                                    <td>
-                                        <strong>Firma cliente:</strong>
-                                    </td>
-                                </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                        <div id="total" class="row justify-content-end">
+                            <div class="col-4">
+                                <table class="table table-sm">
+                                    <t t-if="o.invoice_method !='none'">
+                                        <tr class="border-black o_subtotal">
+                                            <td><strong>Subtotal</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.quotation_price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Impuestos</td>
+                                            <td class="text-right o_price_total">
+                                                <span t-field="o.quotation_taxes" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black o_total">
+                                            <td><strong>Total</strong></td>
+                                            <td class="text-right o_price_total">
+                                                <span t-field="o.quotation_price_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
                     <div class="oe_structure"/>
                 </div>
             </t>
         </template>
 
-        <template id="repair_product_reports.report_repairorder_collect_lines_report">
+        <template id="repair_extended_reports.report_repairorder_collect_lines_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="repair_product_reports.report_repairorder_collect_lines" t-lang="doc.partner_id.lang"/>
+                    <t t-call="repair_extended_reports.report_repairorder_collect_lines" t-lang="doc.partner_id.lang"/>
                 </t>
             </t>
         </template>
 
 
-        <template id="repair_product_reports.report_sticker">
+        <template id="repair_extended_reports.report_sticker">
             <t t-set="o" t-value="doc"/>
 
             <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
@@ -120,10 +198,10 @@
 
         </template>
 
-        <template id="repair_product_reports.report_repairorder_sticker_report">
+        <template id="repair_extended_reports.report_repairorder_sticker_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="repair_product_reports.report_sticker" t-lang="doc.partner_id.lang"/>
+                    <t t-call="repair_extended_reports.report_sticker" t-lang="doc.partner_id.lang"/>
                 </t>
             </t>
         </template>

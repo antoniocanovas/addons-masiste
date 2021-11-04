@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-
+<!-- Esto no se usa, se deja por si se puede reutilizar código-->
 <odoo>
     <data>
          <record id="repair_for_client_report_document" model="ir.ui.view">
