@@ -8,7 +8,6 @@ class RepairProductLine(models.Model):
     _name = "repair.product.line"
     _description = "Lines of repairs"
 
-
     repair_id = fields.Many2one('repair.order', string='Repair Order')
     repair_product_id = fields.Many2one('repair.product', string='Product')
     lot_id = fields.Many2one('repair.product.lot',

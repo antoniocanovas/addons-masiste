@@ -13,20 +13,61 @@
                 <page string="Products" name="products">
                     <field name="repair_line_ids" >
                         <tree string="Product Lines" editable="bottom">
-                            <field name="repair_product_id"/>
-                            <field name="name"/>
+                            <field name="repair_product_id" required="1"/>
+                            <field name="name" required="1"/>
                             <field name="lot_id"
                                    attrs="{'readonly':[('repair_product_id', '=', False)]}"
                                    domain="[('repair_product_id', '=', repair_product_id)]"
                                    context="{'default_repair_product_id': repair_product_id}"/>
-                            <field name="scrap"/>
+                            <field name="scrap" required="1"/>
                         </tree>
                     </field>
-                    <group>
+                    <group colspan="4">
                         <field name="date_out"/>
                     </group>
                 </page>
             </xpath>
+            <xpath
+                    expr="//notebook/page[@name='products']"
+                    position="after"
+            >
+                <page string="Quotation" name="quotation">
+                    <group>
+                        <field name="print_quotation_lines"/>
+                    </group>
+                    <field name="quotation_line_ids">
+                        <tree string="Quotation Lines" editable="bottom">
+                            <field name="repair_id" invisible="1"/>
+                            <field name="product_id" required="1"/>
+                            <field name="name" required="1"/>
+                            <field name="product_qty" required="1"/>
+                            <field name="product_uom_id" required="1"/>
+                            <field name="price_unit" required="1"/>
+                            <field name="tax_ids" required="1" widget="many2many_tags" optional="hidden"/>
+                            <field name="price_subtotal"/>
+                            <field name="price_total" optional="hidden"/>
+                        </tree>
+                    </field>
+                    <group name="note_group" col="6" class="mt-2 mt-md-0">
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="quotation_total">
+                            <field name="quotation_price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="quotation_taxes" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="quotation_price_total"/>
+                            </div>
+                            <field name="quotation_price_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <div class="oe_clear"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='parts']/field[@name='operations']" position="attributes">
+                <attribute name="attrs">{"readonly": [["state","in",["done","cancel"]]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='fees_lines']" position="attributes">
+                <attribute name="attrs">{"readonly": [["state","in",["done","cancel"]]]}</attribute>
+            </xpath>
+
         </field>
     </record>
 

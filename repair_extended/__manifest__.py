@@ -2,20 +2,21 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 {
-    "name": "Repair Product",
+    "name": "Repair Extended",
     "summary": "Repair products not sold by us,"
                " these ones can be always different and must not be included in product.product.",
     "version": "14.0.1.0.0",
     "category": "Repair",
     "author": "Pedro Guirao, ",
-    "website": "https://github.com/OCA/account-analytic",
+    "website": "",
     "license": "AGPL-3",
-    "depends": ["repair"],
+    "depends": ["repair", "base_automation"],
     "data": [
         "security/ir.model.access.csv",
         "views/repair_view.xml",
         "views/menu_views.xml",
-        "views/company_view.xml"
+        "views/company_view.xml",
+        #"data/action_server.xml",
     ],
     "installable": True,
 }

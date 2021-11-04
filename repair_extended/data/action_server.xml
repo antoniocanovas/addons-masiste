@@ -1,0 +1,28 @@
+<odoo>
+
+    <record id="update_list_price_quotation_line" model="base.automation">
+        <field name="name">Update list price QL</field>
+        <field name="model_id" ref="model_repair_quotation_line"/>
+        <field name="state">code</field>
+        <field name="code">
+
+for p in records:
+    if p.product_id:
+            if p.repair_id.pricelist_id:
+                pricelist = p.repair_id.pricelist_id
+                if p.product_qty:
+                      p['price_unit'] = pricelist.get_product_price(p.product_id, p.product_qty, False)
+                else:   p['price_unit'] = pricelist.get_product_price(p.product_id, 1, False)
+            else:
+                p['price_unit'] = record.product_id.lst_price
+
+        </field>
+        <field name="trigger">on_create_or_write</field>
+        <field name="filter_pre_domain"></field>
+        <field name="filter_domain"></field>
+        <field name="active" eval="True"/>
+    </record>
+
+
+
+</odoo>
