@@ -41,7 +41,7 @@
                         <table class="table table-sm o_main_table">
                             <thead>
                                 <tr>
-                                    <th>Producto</th>
+                                    <!--<th>Producto</th>-->
                                     <th>Descripción</th>
                                     <th class="text-right">cantidad</th>
                                     <th class="text-center">Udm</th>
@@ -54,9 +54,9 @@
                             <tbody>
                                 <t t-if="o.quotation_line_ids">
                                     <tr t-foreach="o.quotation_line_ids" t-as="line">
-                                        <td>
+                                        <!--<td>
                                             <span t-field="line.product_id"/>
-                                        </td>
+                                        </td>-->
                                         <td>
                                             <span t-field="line.name"/>
                                         </td>
