@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Esto se usa, para modificar el presupuesto de pedido en sale-->
+<odoo>
+    <data>
+         <record id="report_accountmove_document_without_taxes_lines" model="ir.ui.view">
+            <field name="name">Facturas sin impuestos en las lineas</field>
+            <field name="inherit_id" ref="account.report_invoice_document"/>
+            <field name="arch" type="xml">
+
+	            <xpath expr="//table[1]/thead/tr/th[5]" position="replace">
+        	    </xpath>
+
+	            <xpath expr="//table[1]/tbody/t/tr/t/td[5]" position="replace">
+	            </xpath>
+	    </field> 
+         </record>
+
+    </data>
+</odoo>
