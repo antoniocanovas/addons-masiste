@@ -16,6 +16,7 @@
         "views/repair_view.xml",
         "views/menu_views.xml",
         "views/company_view.xml",
+        "views/invoice_view.xml",
         #"data/action_server.xml",
     ],
     "installable": True,
