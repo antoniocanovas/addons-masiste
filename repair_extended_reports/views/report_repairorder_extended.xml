@@ -128,6 +128,10 @@
                                 </table>
                             </div>
                         </div>
+                        <div>
+                            <br/>
+                            <p  class="text-left" style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
+                        </div>
                     </t>
                     <t t-if="o.print_quotation_lines">
                         <div id="total" class="row justify-content-end">
@@ -156,13 +160,13 @@
                                 </table>
                             </div>
                         </div>
+                        <div>
+                            <br/>
+                            <p  class="text-left" style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
+                        </div>
                     </t>
                 </xpath>
                 <xpath expr="//p[@t-field='o.quotation_notes']" position="replace"/>
-                <xpath expr="//div[@id='total']" position="after">
-                    <p  class="text-left" style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
-                </xpath>
-
             </field>
          </record>
 
