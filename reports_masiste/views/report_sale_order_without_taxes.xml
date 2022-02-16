@@ -7,10 +7,10 @@
             <field name="inherit_id" ref="sale.report_saleorder_document"/>
             <field name="arch" type="xml">
 
-	            <xpath expr="//table/thead/tr/th[4]" position="replace">
+	            <xpath expr="//th[@name='th_taxes']" position="replace">
         	    </xpath>
 
-	            <xpath expr="//table/tbody/t/tr/t/td[4]" position="replace">
+	            <xpath expr="//td[@name='td_taxes']" position="replace">
 	            </xpath>
 	    </field> 
          </record>
