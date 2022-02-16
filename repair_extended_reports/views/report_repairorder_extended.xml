@@ -159,8 +159,8 @@
                     </t>
                 </xpath>
                 <xpath expr="//p[@t-field='o.quotation_notes']" position="replace"/>
-                <xpath expr="//table[@class='table table-sm o_main_table']" position="after">
-                    <p style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
+                <xpath expr="//div[@id='total']" position="after">
+                    <p  class="text-left" style="font-size:16pt;fint-weight:bold;font-style:italic;" t-field="o.quotation_notes"/>
                 </xpath>
 
             </field>
