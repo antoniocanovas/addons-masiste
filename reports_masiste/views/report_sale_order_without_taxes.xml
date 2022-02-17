@@ -2,25 +2,45 @@
 <!-- Esto se usa, para modificar el presupuesto de pedido en sale-->
 <odoo>
     <data>
-         <record id="report_saleorder_document_without_taxes_lines" model="ir.ui.view">
+        <record id="report_saleorder_document_without_taxes_lines" model="ir.ui.view">
             <field name="name">Presupuestos sin impuestos en las lineas</field>
             <field name="inherit_id" ref="sale.report_saleorder_document"/>
             <field name="arch" type="xml">
 
-	            <xpath expr="//th[@name='th_taxes']" position="replace">
-        	    </xpath>
+                <xpath expr="//th[@name='th_taxes']" position="replace">
+                </xpath>
 
-	            <xpath expr="//td[@name='td_taxes']" position="replace">
-	            </xpath>
+                <xpath expr="//td[@name='td_taxes']" position="replace">
+                </xpath>
 
                 <xpath expr="//div[@t-if='doc.user_id.name']" position="after">
                     <div t-if="doc.user_id.partner_id.mobile" class="col-auto col-3 mw-100 mb-2">
                         <strong>Teléfono:</strong>
                         <p class="m-0" t-field="doc.user_id.partner_id.mobile"/>
                     </div>
-	            </xpath>
-	    </field> 
-         </record>
+                </xpath>
+                <xpath expr="//h2[@class='mt16']" position="replace">
+
+                </xpath>
+                <xpath expr="//t[@t-set='information_block']" position="replace">
+                    <t t-set="information_block">
+                        <h2 class="mt16">
+                            <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                                <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                                <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                            </t>
+                            <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                                <span>Pro-Forma Invoice # </span>
+                            </t>
+                            <span t-field="doc.name"/>
+                        </h2>
+                    </t>
+                </xpath>
+
+
+
+            </field>
+        </record>
 
     </data>
 </odoo>
