@@ -19,7 +19,7 @@
                         <p class="m-0" t-field="doc.user_id.partner_id.mobile"/>
                     </div>
                 </xpath>
-                <xpath expr="//h2[@class='mt16']" position="replace">
+                <xpath expr="//t/div/h2[hasclass('mt16')]" position="replace">
 
                 </xpath>
                 <xpath expr="//t[@t-set='information_block']" position="replace">
@@ -37,7 +37,49 @@
                     </t>
                 </xpath>
 
+                <!-- luismi añadidos -->
+                <!-- Añadimos un salto de página cuando haya notas-->
+                <xpath expr="//div[@class='page']/p[@t-field='doc.note']" position="before">
+                    <div style='page-break-after:always'></div>
 
+                    <div>
+                        <div style="float:right;text-align:right">
+                            <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+                            <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+                        </div>
+                    </div>
+
+                    <h2 class="mt16">
+                        <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                            <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                            <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                        </t>
+                        <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                            <span>Pro-Forma Invoice # </span>
+                        </t>
+                        <span t-field="doc.name"/>
+                    </h2>
+
+                    <div class="row mt32 mb32" id="informations">
+                        <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Your Reference:</strong>
+                            <p class="m-0" t-field="doc.client_order_ref"/>
+                        </div>
+                        <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Order Date:</strong>
+                            <p class="m-0" t-field="doc.date_order"/>
+                        </div>
+                        <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Quotation Date:</strong>
+                            <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                        </div>
+                        <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-auto col-3 mw-100 mb-2" name="expiration_date">
+                            <strong>Expiration:</strong>
+                            <p class="m-0" t-field="doc.validity_date"/>
+                        </div>
+                    </div>
+
+                </xpath>
 
             </field>
         </record>
