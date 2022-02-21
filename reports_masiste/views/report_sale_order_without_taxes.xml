@@ -46,9 +46,9 @@
                 <xpath expr="//t[@t-set='information_block']" position="replace">
         	    </xpath>
 
-                <!-- quitamos número de documento para unirlo al head del documento-->
+                <!-- quitamos número de documento para unirlo al head del documento, esto ya se ha quitado más arriba
                 <xpath expr="//h2" position="replace">
-        	    </xpath>
+        	    </xpath> -->
 
                 <!-- quitamos reference, dates y salesperson para unirlo al head del documento-->
                 <xpath expr="//div[@id='informations']" position="replace">
