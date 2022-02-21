@@ -37,7 +37,28 @@
                     </t>
                 </xpath>
 
+                <!-- luismi añadidos -->
+                <!-- quitamos la dirección del cliente para unirlo al head del documento-->
+                <xpath expr="//t[@t-set='address']" position="replace">
+        	    </xpath>
 
+                <!-- quitamos las demás direcciones del cliente, sólo se imprime la primera dirección del cliente-->
+                <xpath expr="//t[@t-set='information_block']" position="replace">
+        	    </xpath>
+
+                <!-- quitamos número de documento para unirlo al head del documento-->
+                <xpath expr="//h2" position="replace">
+        	    </xpath>
+
+                <!-- quitamos reference, dates y salesperson para unirlo al head del documento-->
+                <xpath expr="//div[@id='informations']" position="replace">
+        	    </xpath>
+
+                <!-- esto no se si hace falta, preguntar a Pedro -->
+                <!-- Añadimos un salto de página cuando haya notas-->
+                <xpath expr="//div[@class='page']/p[@t-field='doc.note']" position="before">
+                    <div style='page-break-after:always'></div>
+                </xpath>
 
             </field>
         </record>
