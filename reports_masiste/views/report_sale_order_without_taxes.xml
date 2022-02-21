@@ -39,7 +39,7 @@
 
                 <!-- luismi añadidos -->
                 <!-- Añadimos un salto de página cuando haya notas-->
-                <xpath expr="//div[@class='page']/p[@t-field='doc.note']" position="before">
+                <xpath expr="//t[@t-foreach='doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')']" position="before">
                     <div style='page-break-after:always'></div>
 
                     <div>
