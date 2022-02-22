@@ -5,6 +5,7 @@
         <record id="report_saleorder_document_without_taxes_lines" model="ir.ui.view">
             <field name="name">Presupuestos sin impuestos en las lineas</field>
             <field name="inherit_id" ref="sale.report_saleorder_document"/>
+            <field name="priority">999</field>
             <field name="arch" type="xml">
 
                 <xpath expr="//th[@name='th_taxes']" position="replace">
@@ -39,45 +40,46 @@
 
                 <!-- luismi añadidos -->
                 <!-- Añadimos un salto de página cuando haya notas-->
-                <xpath expr="//div[@class='page']/p[@t-field='doc.note']" position="before">
+                <xpath expr="//p[@id='fiscal_position_remark']" position="after">
+                  <t t-set ="dividirPagina" t-value="False"/>
+                  <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')" t-as="comment_template_id">
+                      <t t-set="dividirPagina" t-value="True"/>
+                  </t>
+                  <t t-if="dividirPagina">
                     <div style='page-break-after:always'></div>
 
-                    <div>
-                        <div style="float:right;text-align:right">
-                            <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
-                            <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
-                        </div>
+                    <div style="float:right;text-align:right">
+                        <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;], &quot;no_marker&quot;: True}"/>
                     </div>
-
-                    <h2 class="mt16">
+                    <br/><br/>
+                    <div style="text-align:left">
+                      <h2 class="mt16">
                         <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                            <span t-if="doc.state not in ['draft','sent']">Order # </span>
-                            <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                            <span t-if="doc.state not in ['draft','sent']">Orden # </span>
+                            <span t-if="doc.state in ['draft','sent']">Presupuesto # </span>
                         </t>
                         <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                            <span>Pro-Forma Invoice # </span>
+                            <span>Pro-Forma # </span>
                         </t>
                         <span t-field="doc.name"/>
-                    </h2>
+                      </h2>
+                    </div>
 
                     <div class="row mt32 mb32" id="informations">
                         <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Your Reference:</strong>
+                            <strong>Tu Referencia:</strong>
                             <p class="m-0" t-field="doc.client_order_ref"/>
                         </div>
                         <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Order Date:</strong>
+                            <strong>Fecha de Orden:</strong>
                             <p class="m-0" t-field="doc.date_order"/>
                         </div>
                         <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Quotation Date:</strong>
+                            <strong>Fecha de presupuesto:</strong>
                             <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
                         </div>
-                        <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-auto col-3 mw-100 mb-2" name="expiration_date">
-                            <strong>Expiration:</strong>
-                            <p class="m-0" t-field="doc.validity_date"/>
-                        </div>
                     </div>
+                  </t>
 
                 </xpath>
 
