@@ -5,7 +5,7 @@
         <record id="report_saleorder_document_without_taxes_lines" model="ir.ui.view">
             <field name="name">Presupuestos sin impuestos en las lineas</field>
             <field name="inherit_id" ref="sale.report_saleorder_document"/>
-            <field name="priority">17</field>
+            <field name="priority">999</field>
             <field name="arch" type="xml">
 
                 <xpath expr="//th[@name='th_taxes']" position="replace">
