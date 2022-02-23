@@ -24,6 +24,9 @@
 
                 </xpath>
                 <xpath expr="//t[@t-set='information_block']" position="replace">
+
+                </xpath>
+                <xpath expr="//t[@t-set='address']" position="after">
                     <t t-set="information_block">
                         <h2 class="mt16">
                             <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
@@ -36,6 +39,7 @@
                             <span t-field="doc.name"/>
                         </h2>
                     </t>
+                    <br/>
                 </xpath>
 
                 <!-- luismi añadidos -->
