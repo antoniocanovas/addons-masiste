@@ -13,6 +13,7 @@
     "data": [
         "views/report_sale_order_without_taxes.xml",
         "views/report_account_move_without_taxes.xml",
+        "views/report_purchaseorder_without_taxes_date_req.xml",
     ],
     "installable": True,
 }
