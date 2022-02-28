@@ -10,13 +10,13 @@
 	            <xpath expr="//table[1]/thead/tr/th[2]" position="replace">
         	    </xpath>
 
-                <xpath expr="//table[1]/thead/tr/th[3]" position="replace">
+                <xpath expr="//table[1]/thead/tr/th[2]" position="replace">
         	    </xpath>
 
 	            <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
 	            </xpath>
 
-                <xpath expr="//table[1]/tbody/t/tr/t/td[3]" position="replace">
+                <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
 	            </xpath>
 	    </field> 
          </record>
