@@ -13,7 +13,7 @@
 	            </xpath>
 
                 <!-- Quitar nombre comercial a los clientes de momento lo hago desaparecer -->
-	            <xpath expr="//t[@t-set='address'" position="replace">
+	            <xpath expr="//t[@t-set='address']" position="replace">
                 </xpath>
 
                 <!-- Poner a misma altura del cliente el número de Factura, de momento lo hago desaparecer -->
@@ -91,11 +91,11 @@
                 </xpath>
 
                 <!-- Quitar comentario a la referencia al pago -->
-	            <xpath expr="//p[@name='payment_communication'" position="replace">
+	            <xpath expr="//p[@name='payment_communication']" position="replace">
                 </xpath>
 
                 <!-- Poner a continuación del plazo de pago el modo de pago si existe-->
-	            <xpath expr="//p[@name='payment_term'" position="replace">
+	            <xpath expr="//p[@name='payment_term']" position="replace">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
                         <span t-field="o.invoice_payment_term_id.note"/>
                         <t t-if="o.payment_mode_id">
