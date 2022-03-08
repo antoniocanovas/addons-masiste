@@ -58,7 +58,7 @@
                                 <p class="m-0" t-field="o.invoice_date"/>
                             </div>
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'" name="due_date">
-                                <strong>Due Date:</strong>
+                                <strong>Vencimiento:</strong>
                                 <p class="m-0" t-field="o.invoice_date_due"/>
                             </div>
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_origin" name="origin">
@@ -92,7 +92,7 @@
 	            <xpath expr="//p[@name='payment_term']" position="replace">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
                         <t t-if="o.payment_mode_id">
-                            Modo de pago: <span t-field="o.payment_mode_id"/> -
+                            MODO DE PAGO: <span t-field="o.payment_mode_id"/> -
                         </t>
                         <span t-field="o.invoice_payment_term_id.note"/>
                     </p>
