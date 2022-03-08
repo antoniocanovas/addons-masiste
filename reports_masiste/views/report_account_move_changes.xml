@@ -9,7 +9,9 @@
 
                 <!-- Cambio en los decimales del precio de 4 a 2 -->
 	            <xpath expr="//table[1]/tbody/t/tr/t/td[3]" position="replace">
-                    <span class="text-nowrap" t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
+                    <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                        <span class="text-nowrap" t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
+                    </td>
 	            </xpath>
 
                 <!-- Quitar nombre comercial a los clientes de momento lo hago desaparecer -->
@@ -85,7 +87,7 @@
 
 
                 <!-- Quitar unidades en la cantidad -->
-	            <xpath expr="//table[2]/tbody/t/tr/t/td[2]" position="replace">
+	            <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
                     <td class="text-right">
                         <span t-field="line.quantity"/>
                     </td>
