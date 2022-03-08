@@ -17,13 +17,15 @@
                 <!-- Quitar nombre comercial a los clientes de momento lo hago desaparecer -->
 	            <xpath expr="//t[@t-set='address']" position="replace">
                     <t t-set="address">
-                        <span t-esc="o.partner_id.name"/><br/>
-                        <span t-esc="o.partner_id.street"/><br/>
-                        <span t-esc="o.partner_id.zip"/> <span t-esc="o.partner_id.city"/><br/>
-                        <span t-esc="o.partner_id.state_id.name"/><br/>
-                        <div t-if="o.partner_id.vat" class="mt16">
-                            <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
-                            <t t-else="">CIF/DNI</t>: <span t-field="o.partner_id.vat"/>
+                        <div style="text-align:_right;">
+                            <span t-esc="o.partner_id.name"/><br/>
+                            <span t-esc="o.partner_id.street"/><br/>
+                            <span t-esc="o.partner_id.zip"/> <span t-esc="o.partner_id.city"/><br/>
+                            <span t-esc="o.partner_id.state_id.name"/><br/>
+                            <div t-if="o.partner_id.vat" class="mt16">
+                                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                                <t t-else="">CIF/DNI</t>: <span t-field="o.partner_id.vat"/>
+                            </div>
                         </div>
                     </t>
                 </xpath>
