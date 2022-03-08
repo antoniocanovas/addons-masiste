@@ -85,7 +85,7 @@
 
 
                 <!-- Quitar unidades en la cantidad -->
-	            <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
+	            <xpath expr="//table[2]/tbody/t/tr/t/td[2]" position="replace">
                     <td class="text-right">
                         <span t-field="line.quantity"/>
                     </td>
