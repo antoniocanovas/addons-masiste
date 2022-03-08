@@ -21,7 +21,7 @@
                 </xpath>
 
                 <!-- Poner a misma altura detalles de la factura, añado todo cliente número y detalle de factura -->
-	            <xpath expr="//div[@id='informations'" position="replace">
+	            <xpath expr="//div[@id='informations']" position="replace">
                     <div>
 	                    <div style="float:right">
                                 <div style="text-align:_right;">
