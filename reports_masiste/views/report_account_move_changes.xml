@@ -79,9 +79,6 @@
                                 </div>
                         </div>
                     </div>
-
-
-
                 </xpath>
 
 
@@ -100,10 +97,10 @@
                 <!-- Poner a continuación del plazo de pago el modo de pago si existe-->
 	            <xpath expr="//p[@name='payment_term']" position="replace">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
-                        <span t-field="o.invoice_payment_term_id.note"/>
                         <t t-if="o.payment_mode_id">
-                            - Modo de pago: <span t-field="o.payment_mode_id"/>
+                            Modo de pago: <span t-field="o.payment_mode_id"/> -
                         </t>
+                        <span t-field="o.invoice_payment_term_id.note"/>
                     </p>
                 </xpath>
 
