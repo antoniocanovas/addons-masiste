@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-
 <odoo>
     <record id="crm_lead_view_form_masiste" model="ir.ui.view">
         <field name="name">Masiste CRM lead view form</field>
