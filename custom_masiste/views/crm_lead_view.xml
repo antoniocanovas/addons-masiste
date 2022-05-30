@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Esto se usa, para modificar la factura por defecto-->
+<odoo>
+    <data>
+        <record id="crm_lead_view_form_masiste" model="ir.ui.view">
+            <field name="name">Masiste CRM lead view form</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <field name="tag_ids" position="after">
+                    <field name="outsourcing_partner"/>
+                </field>
+            </field>
+        </record>
+    </data>
+
+    <data>
+        <record id="view_crm_case_opportunities_filter_masiste" model="ir.ui.view">
+            <field name="name">Masiste CRM lead view form</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <field name="tag_ids" position="after">
+                    <field name="outsourcing_partner" string="Cliente Final"
+                           filter_domain="[('outsourcing_partner', 'ilike', self)]"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>
