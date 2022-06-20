@@ -72,6 +72,10 @@
                 <field name="payment_term_id"/>
             </xpath>
             <xpath expr="//field[@name='quotation_notes']" position="after">
+                <h3>Terminos y condiciones:</h3>
+                <field name="term_condition"/>
+            </xpath>
+            <xpath expr="//field[@name='quotation_notes']" position="after">
                 <h3>Pending invoices:</h3>
                 <field name="pending_invoice_ids" groups="account.group_account_invoice"/>
             </xpath>

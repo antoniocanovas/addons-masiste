@@ -14,6 +14,7 @@ class RepairOrder(models.Model):
     partner_credit = fields.Monetary(related='partner_id.credit', string='Credit')
     payment_term_id = fields.Many2one('account.payment.term', string='Payment term', store="False",
                                       related='partner_id.property_payment_term_id')
+    term_condition = fields.Text(string="Terminos y condiciones")
 
     @api.depends('partner_id')
     def get_pending_invoices(self):
