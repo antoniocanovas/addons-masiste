@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* repair_extended_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-21 10:37+0000\n"
+"PO-Revision-Date: 2022-06-21 12:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#. module: repair_extended_reports
+#: model:ir.actions.report,print_report_name:repair_extended_reports.repairorder_extended_report_retired_materials
+msgid ""
+"( object.state == 'draft' and 'Albarán de entrega de material - %s' % "
+"(object.name) or 'Albarán de entrega de material - %s' % (object.name))"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model:ir.actions.report,print_report_name:repair_extended_reports.repairorder_extended_report_sticker
+msgid ""
+"( object.state == 'draft' and 'sticker - %s' % (object.name) or 'Orden de "
+"Reparación - %s' % (object.name))"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid ""
+"<br/>\n"
+"                                CIF:"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Dirección de envío :</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Fecha:</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Firma cliente:</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Garantía:</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Por Masiste:</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Printing Date:</strong>"
+msgstr "<strong>Fecha de impresión:</strong>"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Product to Repair:</strong>"
+msgstr "<strong>Producto a repararr:</strong>"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "<strong>Producto a reparar:</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "Total sin impuestos"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "<strong>Warranty:</strong>"
+msgstr "<strong>Garantía:</strong>"
+
+#. module: repair_extended_reports
+#: model:ir.actions.report,name:repair_extended_reports.repairorder_extended_report_retired_materials
+msgid "Albarán de retirada de material"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Descripción"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "Dirección de envío:"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
+msgid "Dirección de facturación y de envío:"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Impuestos"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Precio unitario"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Repair Order #:"
+msgstr "Pedido #:"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Repair Quotation #:"
+msgstr "Presupuesto #:"
+
+#. module: repair_extended_reports
+#: model:ir.actions.report,name:repair_extended_reports.repairorder_extended_report_sticker
+msgid "Sticker"
+msgstr "Pegatina"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Subtotal"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Términos y condiciones"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "Udm"
+msgstr ""
+
+#. module: repair_extended_reports
+#: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
+msgid "cantidad"
+msgstr ""

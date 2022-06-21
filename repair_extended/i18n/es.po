@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-16 16:55+0000\n"
-"PO-Revision-Date: 2022-02-16 17:56+0100\n"
+"POT-Creation-Date: 2022-06-21 10:33+0000\n"
+"PO-Revision-Date: 2022-06-21 12:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 
 #. module: repair_extended
 #: model:ir.model.fields,help:repair_extended.field_repair_product_line__state
@@ -30,6 +30,18 @@ msgid ""
 "* The 'Done' status is set when repairing is completed.\n"
 "* The 'Cancelled' status is used when user cancel repair order."
 msgstr ""
+"* El estado 'Borrador' se usa cuando un usuario está codificando una orden "
+"de reparación nueva y no confirmada.\n"
+"* El estado 'Confirmado' se utiliza cuando un usuario confirma la orden de "
+"reparación.\n"
+"* El estado 'Listo para reparar' se usa para comenzar a reparar, el "
+"usuario puede comenzar a reparar solo después de que se confirme la orden "
+"de reparación.\n"
+"* El estado 'Por facturar' se utiliza para generar la factura antes o "
+"después de realizar la reparación.\n"
+"* El estado 'Terminado' se establece cuando se completa la reparación.\n"
+"* El estado 'Cancelado' se utiliza cuando el usuario cancela el pedido de "
+"reparación."
 
 #. module: repair_extended
 #: model:ir.model.fields,help:repair_extended.field_repair_product_line__partner_id
@@ -37,6 +49,8 @@ msgid ""
 "Choose partner for whom the order will be invoiced and delivered. You can "
 "find a partner by its Name, TIN, Email or Internal Reference."
 msgstr ""
+"Selecciona el contacto al que se facturará y entregará el pedido. Puedes "
+"encontrarlo por su Nombre, RFC, Correo Electrónico o Referencia Interna."
 
 #. module: repair_extended
 #: model:ir.model,name:repair_extended.model_res_company
@@ -49,7 +63,7 @@ msgstr "Compañías"
 #: model:ir.model.fields,field_description:repair_extended.field_repair_product_lot__create_uid
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_product__create_date
@@ -57,12 +71,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:repair_extended.field_repair_product_lot__create_date
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__partner_credit
 msgid "Credit"
-msgstr ""
+msgstr "Crédito"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__currency_id
@@ -114,7 +128,7 @@ msgstr "Nombre mostrado"
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__id
 #: model:ir.model.fields,field_description:repair_extended.field_res_company__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: repair_extended
 #: model_terms:ir.ui.view,arch_db:repair_extended.repair_product_line_search
@@ -124,7 +138,7 @@ msgstr "En progreso"
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__pending_invoice_ids
 msgid "Invoices"
-msgstr ""
+msgstr "Facturas"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order____last_update
@@ -172,7 +186,7 @@ msgstr "Lotes/NS"
 #. module: repair_extended
 #: model:ir.ui.menu,name:repair_extended.menu_repair_products_lot
 msgid "Lotes/NS"
-msgstr ""
+msgstr "Lotes/NS"
 
 #. module: repair_extended
 #: model_terms:ir.ui.view,arch_db:repair_extended.repair_product_form
@@ -203,12 +217,12 @@ msgstr "Contacto"
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__payment_term_id
 msgid "Payment term"
-msgstr ""
+msgstr "Términos de Pago"
 
 #. module: repair_extended
 #: model_terms:ir.ui.view,arch_db:repair_extended.custom_repair_order_form_view
 msgid "Pending invoices:"
-msgstr ""
+msgstr "Facturas pendientes:"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__print_quotation_lines
@@ -318,7 +332,7 @@ msgstr "Productos"
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_product_line__lot_id
 msgid "SN"
-msgstr ""
+msgstr "SN"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_product_line__scrap
@@ -344,7 +358,7 @@ msgstr "Estado"
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__quotation_price_subtotal
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__price_subtotal
 msgid "Subtotal"
-msgstr ""
+msgstr "Subtotal"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__quotation_taxes
@@ -357,22 +371,34 @@ msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: repair_extended
+#: model:ir.model.fields,field_description:repair_extended.field_repair_order__term_condition
+msgid "Terminos y condiciones"
+msgstr ""
+
+#. module: repair_extended
+#: model_terms:ir.ui.view,arch_db:repair_extended.custom_repair_order_form_view
+msgid "Terminos y condiciones:"
+msgstr ""
+
+#. module: repair_extended
 #: model:ir.model.fields,help:repair_extended.field_repair_order__payment_term_id
 msgid ""
 "This payment term will be used instead of the default one for sales orders "
 "and customer invoices"
 msgstr ""
+"Este término de pago se utilizará en lugar del predeterminado para órdenes "
+"de venta y facturas de clientes."
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__quotation_price_total
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__price_total
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. module: repair_extended
 #: model:ir.model.fields,help:repair_extended.field_repair_order__partner_credit
 msgid "Total amount this customer owes you."
-msgstr ""
+msgstr "Total que el cliente debe."
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__price_unit
