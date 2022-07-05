@@ -4,12 +4,10 @@
 #    Copyright (C) 2021 Serincloud S.L. All Rights Reserved
 #    PedroGuirao pedro@serincloud.com
 ##############################################################################
-from odoo import api, fields, models, _
-
+from odoo import fields, models, api
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
+    _inherit = 'sale.order'
 
-    outsourcing_partner = fields.Many2one('res.partner', string='Cliente Final')
     delegacion_id = fields.Many2one('res.partner', string='Delegación')
     contacto_id = fields.Many2one('res.partner', string='Contacto')
