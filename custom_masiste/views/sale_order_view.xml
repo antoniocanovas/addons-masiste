@@ -6,10 +6,9 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <field name="partner_shipping_id" position="after">
-                <field name="delegacion_id" attrs="{'domain':[('parent_id','=',record.partner_id.id),
-                                                    ('company_type','!=','person')]}"/>
-                <field name="contacto_id" attrs="{'domain':[('parent_id','=',record.partner_id.id),
-                                                    ('company_type','=','person')]}"/>
+                <field name="delegacion_id"/>
+
+                <field name="contacto_id"/>
             </field>
         </field>
     </record>
