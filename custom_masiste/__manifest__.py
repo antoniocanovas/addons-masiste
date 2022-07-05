@@ -12,6 +12,7 @@
     "depends": ['crm',],
     "data": [
         "views/crm_lead_view.xml",
+        "views/sale_order_view.xml",
     ],
     "installable": True,
 }
