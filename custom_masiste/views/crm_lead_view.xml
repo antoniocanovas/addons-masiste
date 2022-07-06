@@ -8,6 +8,9 @@
             <field name="tag_ids" position="after">
                 <field name="outsourcing_partner"/>
             </field>
+            <field name="phone" position="after">
+                <field name="mobile" widget="phone" string="Móvil"/>
+            </field>
         </field>
     </record>
 

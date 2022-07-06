@@ -5,9 +5,10 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <?xml version="1.0"?>
             <field name="partner_shipping_id" position="after">
-                <field name="delegacion_id"/>
-                <field name="contacto_id"/>
+                <field name="delegacion_id" domain="[('type','!=','contact'),('parent_id','!=',False), '|',('parent_id','=', partner_id),('parent_id','=',delegacion_id)]"/>
+                <field name="contacto_id" domain="[('type','=','contact'),('parent_id','!=',False), '|',('parent_id','=', partner_id),('parent_id','=',delegacion_id)]"/>
             </field>
         </field>
     </record>
