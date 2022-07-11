@@ -27,6 +27,17 @@
 
                 </xpath>
                 <xpath expr="//t[@t-set='address']" position="after">
+                    <t t-set="address">
+                        <div>
+                            <strong><span t-field="doc.partner_id.name"/> </strong><br/>
+                            <span t-field="doc.partner_id.street"/><br/>
+                            <span t-field="doc.partner_id.zip"/> <span t-field="doc.partner_id.state_id"/>
+                            <span t-field="doc.partner_id.country_id"/><br/>
+                            CIF: <span t-field="doc.partner_id.vat"/><br/>
+                        </div>
+                    </t>
+                </xpath>
+                <xpath expr="//t[@t-set='address']" position="after">
                     <t t-set="information_block">
                         <h2 class="mt16">
                             <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
@@ -38,52 +49,73 @@
                             </t>
                             <span t-field="doc.name"/>
                         </h2>
+                        <h3>
+                            <t t-if="doc.quotation_title">
+                                <span t-field="doc.quotation_title"/>
+                            </t>
+                        </h3>
                     </t>
                     <br/>
+                </xpath>
+
+                <xpath expr="//span[@t-field='line.product_uom']"
+                       position="replace">
+                </xpath>
+
+                <xpath expr="//div[@id='informations']" position="inside">
+                    <div t-if="doc.delegacion_id" class="col-auto col-3 mw-100 mb-2">
+                        <strong>Sede:</strong>
+                        <p class="m-0" t-field="doc.delegacion_id"/>
+                    </div>
+                    <div t-if="doc.contacto_id" class="col-auto col-3 mw-100 mb-2">
+                        <strong>A/A:</strong>
+                        <p class="m-0" t-field="doc.contacto_id"/>
+                    </div>
+
                 </xpath>
 
                 <!-- luismi añadidos -->
                 <!-- Añadimos un salto de página cuando haya notas-->
                 <xpath expr="//p[@id='fiscal_position_remark']" position="after">
-                  <t t-set ="dividirPagina" t-value="False"/>
-                  <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')" t-as="comment_template_id">
-                      <t t-set="dividirPagina" t-value="True"/>
-                  </t>
-                  <t t-if="dividirPagina">
-                    <div style='page-break-after:always'></div>
+                    <t t-set ="dividirPagina" t-value="False"/>
+                    <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')" t-as="comment_template_id">
+                        <t t-set="dividirPagina" t-value="True"/>
+                    </t>
+                    <t t-if="dividirPagina">
+                        <div style='page-break-after:always'></div>
 
-                    <div style="float:right;text-align:right">
-                        <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;], &quot;no_marker&quot;: True}"/>
-                    </div>
-                    <br/><br/>
-                    <div style="text-align:left">
-                      <h2 class="mt16">
-                        <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                            <span t-if="doc.state not in ['draft','sent']">Orden # </span>
-                            <span t-if="doc.state in ['draft','sent']">Presupuesto # </span>
-                        </t>
-                        <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                            <span>Pro-Forma # </span>
-                        </t>
-                        <span t-field="doc.name"/>
-                      </h2>
-                    </div>
+                        <div style="float:right;text-align:right">
+                            <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;], &quot;no_marker&quot;: True}"/>
+                        </div>
+                        <br/><br/>
+                        <div style="text-align:left">
+                            <h2 class="mt16">
+                                <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                                    <span t-if="doc.state not in ['draft','sent']">Orden # </span>
+                                    <span t-if="doc.state in ['draft','sent']">Presupuesto # </span>
+                                </t>
+                                <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                                    <span>Pro-Forma # </span>
+                                </t>
+                                <span t-field="doc.name"/>
+                            </h2>
+                        </div>
 
-                    <div class="row mt32 mb32" id="informations">
-                        <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Tu Referencia:</strong>
-                            <p class="m-0" t-field="doc.client_order_ref"/>
+                        <div class="row mt32 mb32" id="informations">
+                            <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
+                                <strong>Tu Referencia:</strong>
+                                <p class="m-0" t-field="doc.client_order_ref"/>
+                            </div>
+                            <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                                <strong>Fecha de Orden:</strong>
+                                <p class="m-0" t-field="doc.date_order"/>
+                            </div>
+                            <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                                <strong>Fecha de presupuesto:</strong>
+                                <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                            </div>
                         </div>
-                        <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Fecha de Orden:</strong>
-                            <p class="m-0" t-field="doc.date_order"/>
-                        </div>
-                        <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                            <strong>Fecha de presupuesto:</strong>
-                            <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
-                        </div>
-                    </div>
-                  </t>
+                    </t>
 
                 </xpath>
 
