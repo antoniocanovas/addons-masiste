@@ -2,20 +2,20 @@
 <!-- Esto se usa, para modificar la factura por defecto-->
 <odoo>
     <data>
-         <record id="report_accountmove_document_changes" model="ir.ui.view">
+        <record id="report_accountmove_document_changes" model="ir.ui.view">
             <field name="name">Facturas varios cambios</field>
             <field name="inherit_id" ref="account.report_invoice_document"/>
             <field name="arch" type="xml">
 
                 <!-- Cambio en los decimales del precio de 4 a 2 -->
-	            <xpath expr="//table[1]/tbody/t/tr/t/td[3]" position="replace">
+                <xpath expr="//table[1]/tbody/t/tr/t/td[3]" position="replace">
                     <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                         <span class="text-nowrap" t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
                     </td>
-	            </xpath>
+                </xpath>
 
                 <!-- Quitar nombre comercial a los clientes de momento lo hago desaparecer -->
-	            <xpath expr="//t[@t-set='address']" position="replace">
+                <xpath expr="//t[@t-set='address']" position="replace">
                     <t t-set="address">
                         <div style="text-align:_right;">
                             <span t-esc="o.partner_id.name"/><br/>
@@ -31,11 +31,11 @@
                 </xpath>
 
                 <!-- Poner a misma altura del cliente el número de Factura, de momento lo hago desaparecer -->
-	            <xpath expr="//h2" position="replace">
+                <xpath expr="//h2" position="replace">
                 </xpath>
 
                 <!-- Poner a misma altura detalles de la factura, hago desaparecer detalle de información factura -->
-	            <xpath expr="//div[@id='informations']" position="replace">
+                <xpath expr="//div[@id='informations']" position="replace">
 
                 </xpath>
 
@@ -57,18 +57,18 @@
                                 <strong>Fecha de Factura:</strong>
                                 <p class="m-0" t-field="o.invoice_date"/>
                             </div>
-                            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'" name="due_date">
+                            <!--<div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'" name="due_date">
                                 <strong>Vencimiento:</strong>
                                 <p class="m-0" t-field="o.invoice_date_due"/>
-                            </div>
+                            </div>-->
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_origin" name="origin">
                                 <strong>Origen:</strong>
                                 <p class="m-0" t-field="o.invoice_origin"/>
                             </div>
-                            <div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.ref" name="customer_code">
+                            <!--<div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.ref" name="customer_code">
                                 <strong>Código de cliente:</strong>
                                 <p class="m-0" t-field="o.partner_id.ref"/>
-                            </div>
+                            </div>-->
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.ref" name="reference">
                                 <strong>Referencia:</strong>
                                 <p class="m-0" t-field="o.ref"/>
@@ -78,18 +78,18 @@
                 </xpath>
 
                 <!-- Quitar unidades en la cantidad -->
-	            <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
+                <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
                     <td class="text-right">
                         <span t-field="line.quantity"/>
                     </td>
                 </xpath>
 
                 <!-- Quitar comentario a la referencia al pago -->
-	            <xpath expr="//p[@name='payment_communication']" position="replace">
+                <xpath expr="//p[@name='payment_communication']" position="replace">
                 </xpath>
 
                 <!-- Poner a continuación del plazo de pago el modo de pago si existe-->
-	            <xpath expr="//p[@name='payment_term']" position="replace">
+                <xpath expr="//p[@name='payment_term']" position="replace">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
                         <t t-if="o.payment_mode_id">
                             MODO DE PAGO: <span t-field="o.payment_mode_id"/> -
@@ -98,9 +98,19 @@
                     </p>
                 </xpath>
 
+                <!-- Quita unitario de Líneas -->
+                <xpath expr="//t/t/div/table/thead/tr/th[@name='th_priceunit']" position="replace">
+                    <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Precio</span></th>
+                </xpath>
 
-	    </field> 
-         </record>
+                <xpath expr="//t[@t-if='o.payment_mode_id and o.payment_mode_id.show_bank_account != 'no'']" position="replace">
+                    <p t-if="o.invoice_payment_term_id.note" name="payment_term">
+                        <span t-field="o.invoice_payment_term_id.note"/> Vencimiento: <span t-field="o.invoice_date_due"/>
+                    </p>
+                </xpath>
+
+            </field>
+        </record>
 
     </data>
 </odoo>
