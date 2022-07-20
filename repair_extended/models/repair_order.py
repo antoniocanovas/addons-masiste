@@ -11,7 +11,7 @@ class RepairOrder(models.Model):
     quotation_line_ids = fields.One2many('repair.quotation.line', 'repair_id', string="Quotation line")
     date_out = fields.Datetime('Date out')
     signature = fields.Binary('Signature')
-    partner_expired_debt = fields.Monetary(related='partner_id.expired_debt', string='Expired due')
+    partner_expired_debt = fields.Monetary(related='partner_id.expired_debt', string='Expired due', store=False)
     payment_term_id = fields.Many2one('account.payment.term', string='Payment term', store="False",
                                       related='partner_id.property_payment_term_id')
     term_condition = fields.Text(string="Terminos y condiciones")
