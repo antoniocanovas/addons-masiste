@@ -1,4 +1,4 @@
-# Copyright 2021 IC - Pedro Guirao
+# Copyright 2021 IC - Serincloud SL
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 {
@@ -10,14 +10,13 @@
     "author": "Pedro Guirao, ",
     "website": "",
     "license": "AGPL-3",
-    "depends": ["repair", "base_automation"],
+    "depends": ["repair", "base_automation", "partner_expired_debt"],
     "data": [
         "security/ir.model.access.csv",
         "views/repair_view.xml",
         "views/menu_views.xml",
         "views/company_view.xml",
         "views/invoice_view.xml",
-        #"data/action_server.xml",
     ],
     "installable": True,
 }
