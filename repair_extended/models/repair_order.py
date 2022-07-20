@@ -20,6 +20,7 @@ class RepairOrder(models.Model):
     def get_pending_invoices(self):
         for record in self:
             invoices = self.env['account.move'].search([('move_type', '=', 'out_invoice'),
+                                                        ('partner_id', '=', record.partner_id.id),
                                                         ('payment_state', '=', ['not_paid', 'in_payment'])])
             record['pending_invoice_ids'] = [(6, 0, invoices.ids)]
     pending_invoice_ids = fields.Many2many("account.move", string="Invoices", store=False, compute="get_pending_invoices")
