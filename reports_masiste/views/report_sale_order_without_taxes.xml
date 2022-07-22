@@ -79,7 +79,9 @@
                 <xpath expr="//p[@id='fiscal_position_remark']" position="after">
                     <t t-set ="dividirPagina" t-value="False"/>
                     <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')" t-as="comment_template_id">
-                        <t t-set="dividirPagina" t-value="True"/>
+                        <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                            <t t-set="dividirPagina" t-value="True"/>
+                        </t>
                     </t>
                     <t t-if="dividirPagina">
                         <div style='page-break-after:always'></div>
