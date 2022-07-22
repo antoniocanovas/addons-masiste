@@ -108,7 +108,7 @@
                             </div>
                             <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
                                 <strong>Fecha de Orden:</strong>
-                                <p class="m-0" t-field="doc.date_order"/>
+                                <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
                             </div>
                             <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
                                 <strong>Fecha de presupuesto:</strong>
@@ -119,8 +119,38 @@
 
                 </xpath>
 
+                <xpath expr="//field[@name='note']" position="after">
+                    <t t-if="payment_mode_id.name">
+                        <p t-field="doc.payment_mode_id.name"/>
+                    </t>
+                </xpath>
+
             </field>
         </record>
 
     </data>
+
+    <!-- Heredamos de report saleorder document comments para condicionar los comentarios s no Proforma -->
+
+    <data>
+        <record id="report_saleorder_proforma_document_without_commetns" model="ir.ui.view">
+            <field name="name">Proforma sin comentarios</field>
+            <field name="inherit_id" ref="sale_comment_template.report_saleorder_document_comments"/>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@t-raw='doc.render_comment(comment_template_top)']" position="replace">
+                    <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                        <div t-raw="doc.render_comment(comment_template_top)"/>
+                    </t>
+                </xpath>
+                 <xpath expr="//div[@t-raw='doc.render_comment(comment_template_bottom)']" position="replace">
+                    <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                        <div t-raw="doc.render_comment(comment_template_bottom)"/>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
 </odoo>
