@@ -75,8 +75,8 @@ msgstr "Creado el"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_order__partner_credit
-msgid "Credit"
-msgstr "Crédito"
+msgid "Expired due"
+msgstr "Deuda vencida"
 
 #. module: repair_extended
 #: model:ir.model.fields,field_description:repair_extended.field_repair_quotation_line__currency_id
