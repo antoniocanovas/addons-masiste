@@ -120,7 +120,7 @@
                 </xpath>
 
                 <xpath expr="//p[@t-field='doc.note']" position="after">
-                    <t t-if="payment_mode_id.name">
+                    <t t-if="doc.payment_mode_id.name">
                         <p t-field="doc.payment_mode_id.name"/>
                     </t>
                 </xpath>
