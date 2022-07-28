@@ -9,12 +9,12 @@
     "author": "Pedro Guirao, ",
     "website": "https://github.com/OCA/account-analytic",
     "license": "AGPL-3",
-    "depends": ['sale', 'base_comment_template', 'sale_comment_template', 'custom_masiste'],
+    "depends": ['sale', 'base_comment_template', 'custom_masiste'],
     "data": [
-        "views/report_sale_order_without_taxes.xml",
         "views/report_account_move_without_taxes.xml",
         "views/report_purchaseorder_without_taxes_date_req.xml",
         "views/report_account_move_changes.xml",
+        "views/report_sale_order_without_taxes.xml",
     ],
     "installable": True,
 }
