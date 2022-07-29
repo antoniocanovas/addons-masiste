@@ -121,30 +121,34 @@
 
                 </xpath>
 
-                <xpath expr="//p[@t-field='doc.note']" position="after">
+                <!--<xpath expr="//p[@t-field='doc.note']" position="after">
                     <t t-if="doc.payment_mode_id.name">
                         <p t-field="doc.payment_mode_id.name"/>
                     </t>
-                </xpath>
+                </xpath>-->
 
             </field>
         </record>
 
-    <!-- Heredamos de report saleorder document comments para condicionar los comentarios s no Proforma -->
+        <!-- Heredamos de report saleorder document comments para condicionar los comentarios s no Proforma -->
 
-       <record id="report_saleorder_proforma_document_without_commetns" model="ir.ui.view">
+        <record id="report_saleorder_proforma_document_without_commetns" model="ir.ui.view">
             <field name="name">Proforma sin comentarios</field>
             <field name="inherit_id" ref="sale_comment_template.report_saleorder_document_comments"/>
             <field name="priority">9999</field>
             <field name="arch" type="xml">
-                <xpath expr="//div[@t-raw='doc.render_comment(comment_template_top)']" position="replace">
+                <xpath expr="//t[@t-as='comment_template_top']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="doc.render_comment(comment_template_top)"/>
+                        <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'before_lines')" t-as="comment_template_top">
+                            <div t-raw="doc.render_comment(comment_template_top)"/>
+                        </t>
                     </t>
                 </xpath>
-                 <xpath expr="//div[@t-raw='doc.render_comment(comment_template_bottom)']" position="replace">
+                <xpath expr="//t[@t-as='comment_template_bottom']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="doc.render_comment(comment_template_top)"/>
+                        <t t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')" t-as="comment_template_bottom">
+                            <div t-raw="doc.render_comment(comment_template_bottom)"/>
+                        </t>
                     </t>
                 </xpath>
             </field>
