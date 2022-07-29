@@ -57,18 +57,12 @@
                                 <strong>Fecha de Factura:</strong>
                                 <p class="m-0" t-field="o.invoice_date"/>
                             </div>
-                            <!--<div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'" name="due_date">
-                                <strong>Vencimiento:</strong>
-                                <p class="m-0" t-field="o.invoice_date_due"/>
-                            </div>-->
+
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_origin" name="origin">
                                 <strong>Origen:</strong>
                                 <p class="m-0" t-field="o.invoice_origin"/>
                             </div>
-                            <!--<div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.ref" name="customer_code">
-                                <strong>Código de cliente:</strong>
-                                <p class="m-0" t-field="o.partner_id.ref"/>
-                            </div>-->
+
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.ref" name="reference">
                                 <strong>Referencia:</strong>
                                 <p class="m-0" t-field="o.ref"/>
@@ -104,6 +98,32 @@
                 <!-- Quita unitario de Líneas -->
                 <xpath expr="//t/t/div/table/thead/tr/th[@name='th_priceunit']" position="replace">
                     <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Precio</span></th>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="report_accountmove_header_space" model="ir.ui.view">
+            <field name="name">Facturas quitar espacio cabecera</field>
+            <field name="inherit_id" ref="web.external_layout_standard"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@class='pt-5']" position="replace">
+                    <t t-if="not o" t-set="o" t-value="doc"/>
+                    <t t-if="o._name == 'account.move'">
+                        <div>
+                            <!-- This div ensures that the address is not cropped by the header. -->
+                            <t t-call="web.address_layout"/>
+
+                        </div>
+                    </t>
+                    <t t-if="not o._name == 'account.move'">
+                        <div class="pt-5">
+                            <!-- This div ensures that the address is not cropped by the header. -->
+                            <t t-call="web.address_layout"/>
+
+                        </div>
+                    </t>
                 </xpath>
 
             </field>

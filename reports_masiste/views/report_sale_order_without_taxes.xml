@@ -89,11 +89,11 @@
                         <div style="float:right;text-align:right">
                             <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;], &quot;no_marker&quot;: True}"/>
                         </div>
-                        <br/><br/>
+                        <br/>
                         <div style="text-align:left">
                             <h2 class="mt16">
                                 <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                                    <span t-if="doc.state not in ['draft','sent']">Orden # </span>
+                                    <span t-if="doc.state not in ['draft','sent']">Pedido # </span>
                                     <span t-if="doc.state in ['draft','sent']">Presupuesto # </span>
                                 </t>
                                 <t t-if="env.context.get('proforma', False) or is_pro_forma">
@@ -130,24 +130,21 @@
             </field>
         </record>
 
-    </data>
-
     <!-- Heredamos de report saleorder document comments para condicionar los comentarios s no Proforma -->
 
-    <data>
-        <record id="report_saleorder_proforma_document_without_commetns" model="ir.ui.view">
+       <record id="report_saleorder_proforma_document_without_commetns" model="ir.ui.view">
             <field name="name">Proforma sin comentarios</field>
             <field name="inherit_id" ref="sale_comment_template.report_saleorder_document_comments"/>
             <field name="priority">9999</field>
             <field name="arch" type="xml">
-                <xpath expr="//div[@t-raw='doc.render_comment(comment_template_top)']" position="replace">
+                <xpath expr="//div[@t-raw='comment_template_top.text']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="doc.render_comment(comment_template_top)"/>
+                        <div t-raw="comment_template_top.text"/>
                     </t>
                 </xpath>
-                 <xpath expr="//div[@t-raw='doc.render_comment(comment_template_bottom)']" position="replace">
+                 <xpath expr="//div[@t-raw='comment_template_bottom.text']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="doc.render_comment(comment_template_bottom)"/>
+                        <div t-raw="comment_template_bottom.text"/>
                     </t>
                 </xpath>
             </field>
