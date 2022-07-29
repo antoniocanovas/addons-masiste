@@ -137,14 +137,14 @@
             <field name="inherit_id" ref="sale_comment_template.report_saleorder_document_comments"/>
             <field name="priority">9999</field>
             <field name="arch" type="xml">
-                <xpath expr="//div[@t-raw='comment_template_top.text']" position="replace">
+                <xpath expr="//div[@t-raw='doc.render_comment(comment_template_top)']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="comment_template_top.text"/>
+                        <div t-raw="doc.render_comment(comment_template_top)"/>
                     </t>
                 </xpath>
-                 <xpath expr="//div[@t-raw='comment_template_bottom.text']" position="replace">
+                 <xpath expr="//div[@t-raw='doc.render_comment(comment_template_bottom)']" position="replace">
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                        <div t-raw="comment_template_bottom.text"/>
+                        <div t-raw="doc.render_comment(comment_template_top)"/>
                     </t>
                 </xpath>
             </field>
