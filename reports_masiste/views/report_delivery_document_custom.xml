@@ -2,19 +2,19 @@
 
 <odoo>
     <data>
-         <record id="report_delivery_document_custom" model="ir.ui.view">
+        <record id="report_delivery_document_custom" model="ir.ui.view">
             <field name="name">Sustituir displayname por name en productos</field>
             <field name="inherit_id" ref="stock.report_delivery_document"/>
             <field name="arch" type="xml">
 
-	            <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]/" position="replace">
+                <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]/span" position="replace">
                     <span t-field="move.product_id.name"></span>
-        	    </xpath>
-                 <xpath expr="//table[@name='stock_backorder_table']/tbody/t/tr/td[1]/" position="replace">
+                </xpath>
+                <xpath expr="//table[@name='stock_backorder_table']/tbody/t/tr/td[1]/span" position="replace">
                     <span t-field="bo_line.product_id.name"/>
-        	    </xpath>
-	    </field> 
-         </record>
+                </xpath>
+            </field>
+        </record>
 
     </data>
 </odoo>
