@@ -2,24 +2,31 @@
 <!-- Esto se usa, para modificar el presupuesto de pedido en sale-->
 <odoo>
     <data>
-         <record id="report_purchaseorder_without_taxes_date_req" model="ir.ui.view">
+        <record id="report_purchaseorder_without_taxes_date_req" model="ir.ui.view">
             <field name="name">Órdenes de compra sin impuestos ni Fecha requerida en las lineas</field>
             <field name="inherit_id" ref="purchase.report_purchaseorder_document"/>
             <field name="arch" type="xml">
 
-	            <xpath expr="//table[1]/thead/tr/th[2]" position="replace">
-        	    </xpath>
+                <xpath expr="//table[1]/thead/tr/th[2]" position="replace">
+                </xpath>
 
                 <xpath expr="//table[1]/thead/tr/th[2]" position="replace">
-        	    </xpath>
-
-	            <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
-	            </xpath>
+                </xpath>
 
                 <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
-	            </xpath>
-	    </field> 
-         </record>
+                </xpath>
+
+                <xpath expr="//table[1]/tbody/t/tr/t/td[2]" position="replace">
+                </xpath>
+
+                <xpath expr="//t[@t-set='address']" position="replace">
+                    <t t-set="address">
+                        <div t-field="o.partner_id.name" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                        <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>
+                    </t>
+                </xpath>
+            </field>
+        </record>
 
     </data>
 </odoo>
