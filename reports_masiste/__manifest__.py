@@ -4,7 +4,7 @@
 {
     "name": "Reports without taxes ",
     "summary": "Reports from sale.order and account wihtout taxes.",
-    "version": "14.0.1.0.0",
+    "version": "14.0.2.0.0",
     "category": "Reports",
     "author": "Pedro Guirao, ",
     "website": "https://github.com/OCA/account-analytic",
