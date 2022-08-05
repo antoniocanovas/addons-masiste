@@ -18,7 +18,7 @@
                 <xpath expr="//t[@t-set='address']" position="replace">
                     <t t-set="address">
                         <div style="text-align:_right;">
-                            <span t-esc="o.partner_id.name"/><br/>
+                            <span t-esc="o.partner_id.name_printed"/><br/>
                             <span t-esc="o.partner_id.street"/><br/>
                             <span t-esc="o.partner_id.zip"/> <span t-esc="o.partner_id.city"/><br/>
                             <span t-esc="o.partner_id.state_id.name"/><br/>

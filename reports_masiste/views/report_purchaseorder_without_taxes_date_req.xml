@@ -22,7 +22,7 @@
                 <xpath expr="//t[@t-set='address']" position="replace">
                     <t t-set="address">
                         <div>
-                            <strong><span t-field="o.partner_id.name"/> </strong><br/>
+                            <strong><span t-field="o.partner_id.name_printed"/> </strong><br/>
                             <span t-field="o.partner_id.street"/><br/>
                             <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.state_id"/>
                             <span t-field="o.partner_id.country_id"/><br/>
