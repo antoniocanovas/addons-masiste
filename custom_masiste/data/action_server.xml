@@ -5,9 +5,7 @@
         <field name="model_id" ref="account.model_account_move"/>
         <field name="state">code</field>
         <field name="code">
-if (record.state == 'posted')
-            and (record.move_type in ['out_invoice','in_invoice','out_refund','in_refund'])
-            and not (record.partner_id.vat):
+if (record.state == 'posted') and (record.move_type in ['out_invoice','in_invoice','out_refund','in_refund']) and not (record.partner_id.vat):
     raise Warning('Ponle el NIF al contacto')
         </field>
         <field name="trigger">on_write</field>
