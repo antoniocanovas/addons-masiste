@@ -9,7 +9,9 @@
     "author": "Serincloud",
     "website": "",
     "license": "AGPL-3",
-    "depends": ['crm','sale_management'],
+    "depends": ['crm',
+                'sale_management',
+                'base.automation'],
     "data": [
         "views/crm_lead_view.xml",
         "views/sale_order_view.xml",
