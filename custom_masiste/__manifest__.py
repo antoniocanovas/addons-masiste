@@ -11,7 +11,7 @@
     "license": "AGPL-3",
     "depends": ['crm',
                 'sale_management',
-                'base.automation'],
+                'base_automation'],
     "data": [
         "views/crm_lead_view.xml",
         "views/sale_order_view.xml",
