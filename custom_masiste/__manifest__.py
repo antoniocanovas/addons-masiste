@@ -10,8 +10,9 @@
     "website": "",
     "license": "AGPL-3",
     "depends": ['crm',
+                'base_automation',
                 'sale_management',
-                'base_automation'],
+                'helpdesk_mgmt'],
     "data": [
         "views/crm_lead_view.xml",
         "views/sale_order_view.xml",
