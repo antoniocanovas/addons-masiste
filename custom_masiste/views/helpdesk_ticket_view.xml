@@ -13,9 +13,9 @@
                 -->
                 <field name="provincia_id"/>
                 <field name="facturar_a"/>
-                <field name="partner_name" position="replace"/>
-                <field name="partner_email" position="replace"/>
             </field>
+            <field name="partner_name" position="replace"/>
+            <field name="partner_email" position="replace"/>
         </field>
     </record>
 
