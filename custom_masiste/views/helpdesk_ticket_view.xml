@@ -17,6 +17,7 @@
             <field name="partner_name" position="replace"/>
             <field name="partner_email" position="replace"/>
         </field>
+        <field name="priority">99</field>
     </record>
 
 </odoo>
