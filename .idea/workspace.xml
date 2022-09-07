@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="helpdesk delegacion_id">
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_masiste/models/helpdesk_ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/models/helpdesk_ticket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662127467964</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="helpdesk delegacion_id">
+      <created>1662128404627</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662128404627</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,5 +124,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="helpdesk delegacion_id" />
     <option name="LAST_COMMIT_MESSAGE" value="helpdesk delegacion_id" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

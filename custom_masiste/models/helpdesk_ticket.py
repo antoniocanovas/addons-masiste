@@ -12,3 +12,4 @@ class HelpdeskTicket(models.Model):
     delegacion_id = fields.Many2one('res.partner', string='Delegación')
     provincia_id = fields.Many2one('res.country.state', string='Provincia',
                                    related='delegacion_id.state_id', store=True)
+    facturar_a = fields.Many2one('res.partner', string='Facturar a', store=True)

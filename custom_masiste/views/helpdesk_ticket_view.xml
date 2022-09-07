@@ -11,6 +11,10 @@
                 <field name="delegacion_id" domain="[('type','!=','contact'),('parent_id','!=',False),
                                             '|',('parent_id','=', partner_id),('parent_id','=',delegacion_id)]"/>
                 -->
+                <field name="provincia_id"/>
+                <field name="delegacion_id"/>
+                <field name="partner_name" position="replace"/>
+                <field name="email" position="replace"/>
             </field>
         </field>
     </record>
