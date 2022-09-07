@@ -12,7 +12,7 @@
                                             '|',('parent_id','=', partner_id),('parent_id','=',delegacion_id)]"/>
                 -->
                 <field name="provincia_id"/>
-                <field name="delegacion_id"/>
+                <field name="facturar_a"/>
                 <field name="partner_name" position="replace"/>
                 <field name="partner_email" position="replace"/>
             </field>
