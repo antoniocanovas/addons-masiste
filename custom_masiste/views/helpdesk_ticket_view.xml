@@ -14,7 +14,7 @@
                 <field name="provincia_id"/>
                 <field name="delegacion_id"/>
                 <field name="partner_name" position="replace"/>
-                <field name="email" position="replace"/>
+                <field name="partner_email" position="replace"/>
             </field>
         </field>
     </record>
