@@ -12,7 +12,8 @@
     "depends": ['crm',
                 'base_automation',
                 'sale_management',
-                'helpdesk_mgmt'],
+                'helpdesk_mgmt',
+                'partner_expired_debt'],
     "data": [
         "views/crm_lead_view.xml",
         "views/sale_order_view.xml",
