@@ -17,6 +17,7 @@
             </field>
             <field name="partner_name" position="replace"/>
             <field name="partner_email" position="replace"/>
+            <field name="currency_id" invisible="1"/>
         </field>
         <field name="priority">99</field>
     </record>

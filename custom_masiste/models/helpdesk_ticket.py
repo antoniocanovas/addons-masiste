@@ -14,3 +14,5 @@ class HelpdeskTicket(models.Model):
                                    related='delegacion_id.state_id', store=True)
     facturar_a = fields.Many2one('res.partner', string='Facturar a', store=True)
     partner_expired_debt = fields.Monetary(related='partner_id.expired_debt', string='Expired due', store=False)
+    currency_id = fields.Many2one('res.currency', string='currency', default=1)
+    
