@@ -54,8 +54,8 @@
                         <table class="table table-sm o_main_table">
                             <thead>
                                 <tr>
-                                    <th class="text-center"><strong>Product to Repair:</strong></th>
-                                    <th class="text-center"><strong>NS</strong></th>
+                                    <th class="text-left"><strong>Product to Repair:</strong></th>
+                                    <th class="text-left"><strong>NS</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
