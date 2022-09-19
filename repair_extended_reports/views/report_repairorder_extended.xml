@@ -19,7 +19,7 @@
 
                         <div style="float:right;text-align:right">
                             <div style="font-weight: 400;font-size:14px;text-align:right;line-height: 18px;">
-                                <strong><span t-field="o.partner_id" style="text-align:left;font-weight: 900;white-space: nowrap;font-size:16px;"/></strong><br/>
+                                <strong><span t-field="o.partner_id.name" style="text-align:left;font-weight: 900;white-space: nowrap;font-size:16px;"/></strong><br/>
                                 <span t-field="o.partner_id.street"/><br/>
                                 <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.state_id"/>,
                                 <span t-field="o.partner_id.country_id"/><br/>
@@ -37,13 +37,13 @@
 
                 <xpath expr="//div[@id='informations']" position="replace">
                     <div id="informations" class="row mt32 mb32">
-                        <div class="col-3 bm-1">
+                        <!--<div class="col-3 bm-1">
                             <strong>Product to Repair:</strong>
-                        </div>
+                        </div>-->
                         <div t-if="o.guarantee_limit" class="col-3 bm-1">
                             <strong>Warranty:</strong><span t-field="o.guarantee_limit" class="m-0"/>
                         </div>
-                        <div class="col-3 bm-1">
+                        <div class="col-5 bm-1">
                             <strong>Printing Date:</strong><span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>
                         </div>
                     </div>
@@ -52,6 +52,12 @@
                 <xpath expr="//table[@class='table table-sm o_main_table']" position="replace">
                     <t t-if="not o.print_quotation_lines">
                         <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><strong>Product to Repair:</strong></th>
+                                    <th class="text-center"><strong>NS</strong></th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <t t-if="o.repair_line_ids">
                                     <tr t-foreach="o.repair_line_ids" t-as="line">

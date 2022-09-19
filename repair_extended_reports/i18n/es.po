@@ -71,7 +71,7 @@ msgstr "<strong>Fecha de impresión:</strong>"
 #. module: repair_extended_reports
 #: model_terms:ir.ui.view,arch_db:repair_extended_reports.repair_for_client_report_document
 msgid "<strong>Product to Repair:</strong>"
-msgstr "<strong>Producto a repararr:</strong>"
+msgstr "<strong>Producto a reparar:</strong>"
 
 #. module: repair_extended_reports
 #: model_terms:ir.ui.view,arch_db:repair_extended_reports.report_repairorder_collect_lines
