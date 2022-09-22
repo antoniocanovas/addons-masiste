@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<odoo>
+    <template id="print_check_sabadell">
+        <t t-call="web.html_container">
+            <div class="article">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <span style="position:absolute;top:120px;left:200px" t-esc="o.check_date.day"/>
+                        <span style="position:absolute;top:120px;left:275px" t-esc="o.check_date.strftime('%B')"/>
+                        <span style="position:absolute;top:120px;left:420px" t-esc="o.check_date.year"/>
+                        <span style="position:absolute;top:120px;left:620px" t-field="o.amount"  t-options="{&quot;widget&quot;: &quot;monetary&quot;}"/>
+                        <span style="position:absolute;top:155px;left:145px" t-esc="o.partner_id.name"/>
+                        <span style="position:absolute;top:175px;left:300px;width:40%" t-field="o.check_amount_in_words"/>
+                        <span style="position:absolute;top:215px;left:580px" t-esc="o.date.day"/>
+                        <p style="position:absolute;top:215px;left:620px"> de </p>
+                        <span style="position:absolute;top:215px;left:660px" t-esc="o.date.strftime('%B')"/>
+                        <span style="position:absolute;top:215px;left:795px" t-esc="o.date.year"/>
+                        <!--<p style="position:absolute;top:245px;left:795px"> SEq N</p>
+                        <span style="position:absolute;top:245px;left:895px" t-if="o.check_number" t-esc="o.check_number"/>-->
+                        <!-- <t-set date="datetime.strptime(check_date, DEFAULT_SERVER_DATE_FORMAT)"/>-->
+                        <!-- <div name='invoice_data_block' class="oe_mt32">
+                             <strong name='invoice_data_header'>
+                                 <span
+                                     name='partner'
+                                     t-esc="'Partner: {}'.format(o.partner_id.name)"
+                                 />
+
+                         <div name='check_amount' class="oe_mt32" align="right">
+                             <b>Check Amount: </b><span
+                                 t-field='o.amount'
+                                 t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                             />
+                         </div>-->
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+
+
+    <record id="action_report_check_report" model="ir.actions.report">
+        <field name="name">Payment Check Report</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account_check_report_masiste.print_check_sabadell</field>
+        <field name="report_file">account_check_report_masiste.print_check_sabadell</field>
+        <field name="binding_model_id" ref="account.model_account_payment" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
