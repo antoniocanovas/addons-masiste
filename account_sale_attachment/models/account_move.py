@@ -18,4 +18,10 @@ class AccountMove(models.Model):
                         sales.append(li.order_id.id)
             data = self.env['ir.attachment'].search([('res_model', '=', 'sale.order'), ('res_id', 'in', sales)])
             record.sale_attachment_ids = [(6, 0, data.ids)]
-    sale_attachment_ids = fields.Many2many('ir.attachment', store=False, compute=get_sale_attachment)
+    sale_attachment_ids = fields.Many2many(comodel_name='ir.attachment',
+                                           relation='account_sale_attachment_rel',
+                                           colum1='account_move_id',
+                                           column2='attachment_id',
+                                           store=False,
+                                           compute=get_sale_attachment,
+                                           string='Files')
