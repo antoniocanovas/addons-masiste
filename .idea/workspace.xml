@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="helpdesk partner_expired_debt">
-      <change beforePath="$PROJECT_DIR$/custom_masiste/models/helpdesk_ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/models/helpdesk_ticket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_sale_attachment/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_sale_attachment/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_sale_attachment/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_sale_attachment/models/account_move.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_sale_attachment/views/account_move_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +34,11 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/custom_masiste/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/custom_masiste/views" />
       <recent name="$PROJECT_DIR$/custom_masiste/models" />
     </key>
@@ -167,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662626296364</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="helpdesk partner_expired_debt">
+      <created>1662626506436</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1662626506436</updated>
+    </task>
+    <task id="LOCAL-00016" summary="helpdesk partner_expired_debt">
+      <created>1662626594428</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1662626594428</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,5 +206,16 @@
     <MESSAGE value="helpdesk facturar_a" />
     <MESSAGE value="helpdesk partner_expired_debt" />
     <option name="LAST_COMMIT_MESSAGE" value="helpdesk partner_expired_debt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
