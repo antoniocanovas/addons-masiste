@@ -7,7 +7,7 @@
 from odoo import api, fields, models, _
 
 class AccountMove(models.Model):
-    _name = "account.move"
+    _inherit = "account.move"
 
     def get_sale_attachment(self):
         for record in self:
