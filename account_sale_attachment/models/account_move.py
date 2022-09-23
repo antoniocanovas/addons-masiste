@@ -7,7 +7,7 @@
 from odoo import api, fields, models, _
 
 class AccountMove(models.Model):
-    _name = 'account.move'
+    _name = "account.move"
 
     def get_sale_attachment(self):
         for record in self:
@@ -23,5 +23,5 @@ class AccountMove(models.Model):
                                            column1='account_move_id',
                                            column2='attachment_id',
                                            store=False,
-                                           compute=get_sale_attachment,
-                                           string='Files')
+                                           compute='get_sale_attachment',
+                                           string='Archivos')
