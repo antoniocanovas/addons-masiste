@@ -12,6 +12,7 @@
                 </page>
             </xpath>
         </field>
+        <field name="priority">99</field>
     </record>
 
 </odoo>
