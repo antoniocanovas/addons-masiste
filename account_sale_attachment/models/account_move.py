@@ -20,7 +20,7 @@ class AccountMove(models.Model):
             record.sale_attachment_ids = [(6, 0, data.ids)]
     sale_attachment_ids = fields.Many2many(comodel_name='ir.attachment',
                                            relation='account_sale_attachment_rel',
-                                           colum1='account_move_id',
+                                           column1='account_move_id',
                                            column2='attachment_id',
                                            store=False,
                                            compute=get_sale_attachment,
