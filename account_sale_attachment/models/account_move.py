@@ -6,7 +6,6 @@
 ##############################################################################
 from odoo import api, fields, models, _
 
-
 class AccountMove(models.Model):
     _name = 'account.move'
 
