@@ -18,7 +18,7 @@
         'sale_management',
     ],
     "data": [
-        'views/account_move_view.xml'
+    #    'views/account_move_view.xml'
     ],
     "installable": True,
 }
