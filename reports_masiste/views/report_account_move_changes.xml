@@ -86,7 +86,7 @@
                 <xpath expr="//span[@t-field='o.invoice_payment_term_id.note']" position="before">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
                         <t t-if="o.payment_mode_id">
-                            MODO DE PAGO: <span t-field="o.payment_mode_id"/>
+                            MODO DE PAGO: <span t-field="o.payment_mode_id"/><span t-field="o.payment_state"/>
                         </t>
                     </p>
                     <!--<p t-if="o.invoice_payment_term_id.note" name="payment_term">
@@ -124,6 +124,46 @@
 
                         </div>
                     </t>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="account_invoice_report_due_list_custom" model="ir.ui.view">
+            <field name="name">Facturas varios cambios</field>
+            <field name="inherit_id" ref="account_invoice_report_due_list.report_invoice_document"/>
+            <field name="arch" type="xml">
+
+                <!-- Poner a continuación del plazo de pago el modo de pago si existe-->
+                <xpath expr="//table[@class='table table-striped']" position="replace">
+                    <t t-if="o.payment_state == 'paid'">
+                        <p>
+
+                               ESTADO: PAGADO
+
+                        </p>
+                    </t>
+                    <t t-if="o.payment_state != 'paid'">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Date Due</th>
+                                    <th class="text-right">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="due_list" t-as="due_tuple">
+                                    <td>
+                                        <span t-esc="due_tuple[0]" t-options="{'widget': 'date'}"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="due_tuple[1]" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+
                 </xpath>
 
             </field>
