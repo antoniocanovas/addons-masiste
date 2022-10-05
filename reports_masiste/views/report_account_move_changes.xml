@@ -86,7 +86,9 @@
                 <xpath expr="//span[@t-field='o.invoice_payment_term_id.note']" position="before">
                     <p t-if="o.invoice_payment_term_id" name="payment_term">
                         <t t-if="o.payment_mode_id">
-                            MODO DE PAGO: <span t-field="o.payment_mode_id"/><span t-field="o.payment_state"/>
+                    <!-- Cambio Antonio Cánovas 5/10/22 para quitar payment_state
+                            MODO DE PAGO: <span t-field="o.payment_mode_id"/><span t-field="o.payment_state"/> -->
+                            MODO DE PAGO: <span t-field="o.payment_mode_id"/>
                         </t>
                     </p>
                     <!--<p t-if="o.invoice_payment_term_id.note" name="payment_term">
@@ -147,8 +149,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Date Due</th>
-                                    <th class="text-right">Amount</th>
+                                    <th>Vencimiento</th>
+                                    <th class="text-right">Importe</th>
                                 </tr>
                             </thead>
                             <tbody>
