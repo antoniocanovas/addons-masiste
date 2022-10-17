@@ -64,7 +64,7 @@
 
                 <xpath expr="//div[@id='informations']" position="inside">
                     <div t-if="doc.delegacion_id" class="col-auto col-3 mw-100 mb-2">
-                        <strong>Sede:</strong>
+                        <strong>Destino:</strong>
                         <p class="m-0" t-field="doc.delegacion_id.name"/>
                     </div>
                     <div t-if="doc.contacto_id" class="col-auto col-3 mw-100 mb-2">
