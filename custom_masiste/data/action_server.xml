@@ -14,5 +14,18 @@ if (record.state == 'posted') and (record.move_type in ['out_invoice','in_invoic
         <field name="active" eval="True"/>
     </record>
 
+    <record id="invoice_delete_followers_on_createion" model="base.automation">
+        <field name="name">=> Borrar seguidores al crear factura</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="state">code</field>
+        <field name="code">
+record['message_follower_ids'].unlink()
+        </field>
+        <field name="trigger">on_create</field>
+        <field name="filter_pre_domain"></field>
+        <field name="filter_domain"></field>
+        <field name="active" eval="True"/>
+    </record>
+
 
 </odoo>
