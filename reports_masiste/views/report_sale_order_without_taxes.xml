@@ -120,11 +120,11 @@
                     </t>
 
                 </xpath>
-
+                <!-- ### 14 diciembre 2022 vuelven a solicitar el payment_mode Guillermo y Bea### -->
                 <xpath expr="//p[@t-field='doc.note']" position="after">
-                    <!--  <t t-if="doc.payment_mode_id.name">
+                      <t t-if="doc.payment_mode_id.name">
                           <p t-field="doc.payment_mode_id.name"/>
-                      </t>-->
+                      </t>
                 </xpath>
 
             </field>
@@ -157,7 +157,7 @@
         <!-- Heredamos de report_saleorder_document_inherit_sale_management para añadir columnas en opcionales -->
 
         <record id="report_saleorder_document_inherit_sale_management_custom" model="ir.ui.view">
-            <field name="name">Opcionales custom </field>
+            <field name="name">Opcionales custom</field>
             <field name="inherit_id" ref="sale_management.report_saleorder_document_inherit_sale_management"/>
             <field name="priority">9999</field>
             <field name="arch" type="xml">
