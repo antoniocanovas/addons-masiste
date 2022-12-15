@@ -11,40 +11,58 @@
                     <div class="text-left">
                         <h2><span t-field="o.number"/> - <span t-field="o.name"/></h2>
                     </div>
-                    <table  style="width:90%;border:none;" name="ticket_data_table">
+                    <table  class="table-border" style="width:90%;border:0px;font-size:12px;" name="ticket_data_table">
                         <tbody>
-                             <tr style="border-bottom:0pt ;border-top:0pt">
-
+                            <tr style="padding-top: 0;padding-bottom: 0;">
                                 <td class="text-left">
                                     <b><span>Type:</span></b>
                                     <span t-field="o.type_id.name"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Team:</span></b>
-                                    <span t-field="o.team_id"/>
+                                    <b><span>Contact:</span></b>
+                                    <span t-field="o.partner_id"/>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
-
+                                <td class="text-left">
+                                    <b><span>Team:</span></b>
+                                    <span t-field="o.team_id"/>
+                                </td>
+                                <td class="text-left">
+                                    <b><span>Delegation:</span></b>
+                                    <span t-field="o.delegacion_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:0pt ;border-top:0pt">
                                 <td class="text-left">
                                     <b><span>User:</span></b>
                                     <span t-field="o.user_id"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Priority:</span></b>
-                                    <span t-field="o.priority"/>
+                                    <b><span>Provincia:</span></b>
+                                    <span t-field="o.provincia_id"/>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
-
+                                <td class="text-left">
+                                    <b><span>Priority:</span></b>
+                                    <span t-field="o.priority"/>
+                                </td>
+                                <td class="text-left">
+                                    <b><span>Facturar a:</span></b>
+                                    <span t-field="o.partner_invoiced_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:0pt ;border-top:0pt">
                                 <td class="text-left">
                                     <b><span>Create date:</span></b>
                                     <span t-field="o.create_date"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Channel:</span></b>
-                                    <span t-field="o.channel_id"/>
+                                    <b><span>Proyecto:</span></b>
+                                    <span t-field="o.project_id"/>
                                 </td>
+
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
 
@@ -53,56 +71,33 @@
                                     <span t-field="o.assigned_date"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Clossed date:</span></b>
-                                    <span t-field="o.closed_date"/>
-                                </td>
-                            </tr>
-
-                            <tr style="border-bottom:0pt ;border-top:0pt">
-
-                                <td class="text-left">
-                                    <b><span>Stage:</span></b>
-                                    <span t-field="o.stage_id"/>
-                                </td>
-                                <td class="text-left">
-                                    <b><span>Delegation:</span></b>
-                                    <span t-field="o.delegacion_id"/>
-                                </td>
-                            </tr>
-                             <tr style="border-bottom:0pt ;border-top:0pt">
-
-                                <td class="text-left">
-                                    <b><span>Provincia:</span></b>
-                                    <span t-field="o.provincia_id"/>
-                                </td>
-                                <td class="text-left">
-                                    <b><span>Facturar a:</span></b>
-                                    <span t-field="o.partner_invoiced_id"/>
-                                </td>
-                            </tr>
-                             <tr style="border-bottom:0pt ;border-top:0pt">
-
-                                <td class="text-left">
-                                    <b><span>Proyecto:</span></b>
-                                    <span t-field="o.project_id"/>
-                                </td>
-                                <td class="text-left">
                                     <b><span>Tarea:</span></b>
                                     <span t-field="o.task_id"/>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
+                                <td class="text-left">
+                                    <b><span>Channel:</span></b>
+                                    <span t-field="o.channel_id"/>
+                                </td>
 
                                 <td class="text-left">
-                                    <b><span>Proyecto:</span></b>
+                                    <b><span>Categoría:</span></b>
                                     <span t-field="o.category_id"/>
+                                </td>
+
+                            </tr>
+                            <tr style="border-bottom:0pt ;border-top:0pt">
+                                <td class="text-left">
+                                    <b><span>Stage:</span></b>
+                                    <span t-field="o.stage_id"/>
                                 </td>
                                 <td class="text-left">
                                     <b><span>Tags:</span></b>
                                     <span t-field="o.tag_ids"/>
                                 </td>
-                            </tr>
 
+                            </tr>
                         </tbody>
                     </table>
                     <div class="text-left">
