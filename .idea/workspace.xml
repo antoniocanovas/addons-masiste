@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="delete followers on invoice creation">
+    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="vendor purchase dis remove">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_masiste/views/sale_order_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/sale_order_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +274,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667481556466</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="vendor purchase disc v15 cyb">
+      <created>1667992908845</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1667992908845</updated>
+    </task>
+    <task id="LOCAL-00031" summary="vendor purchase dis remove">
+      <created>1667994868378</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1667994868378</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +311,19 @@
     <MESSAGE value="Ventas sede por destino" />
     <MESSAGE value="sale order not editable when full invoiced" />
     <MESSAGE value="delete followers on invoice creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete followers on invoice creation" />
+    <MESSAGE value="vendor purchase disc v15 cyb" />
+    <MESSAGE value="vendor purchase dis remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="vendor purchase dis remove" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
