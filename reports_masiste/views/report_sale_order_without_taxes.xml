@@ -120,11 +120,11 @@
                     </t>
 
                 </xpath>
-
+                <!-- ### 14 diciembre 2022 vuelven a solicitar el payment_mode Guillermo y Bea### -->
                 <xpath expr="//p[@t-field='doc.note']" position="after">
-                    <t t-if="doc.payment_mode_id.name">
-                        <p t-field="doc.payment_mode_id.name"/>
-                    </t>
+                      <t t-if="doc.payment_mode_id.name">
+                          <p t-field="doc.payment_mode_id.name"/>
+                      </t>
                 </xpath>
 
             </field>
@@ -150,6 +150,39 @@
                             <div t-raw="doc.render_comment(comment_template_bottom)"/>
                         </t>
                     </t>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Heredamos de report_saleorder_document_inherit_sale_management para añadir columnas en opcionales -->
+
+        <record id="report_saleorder_document_inherit_sale_management_custom" model="ir.ui.view">
+            <field name="name">Opcionales custom</field>
+            <field name="inherit_id" ref="sale_management.report_saleorder_document_inherit_sale_management"/>
+            <field name="priority">9999</field>
+            <field name="arch" type="xml">
+                <xpath expr="//th[@name='th_option_name']" position="after">
+                    <th name="th_option_qty" class="text-right">Quantity</th>
+                </xpath>
+                <xpath expr="//th[@name='th_option_price_unit']" position="after">
+                    <th name="th_option_total" class="text-right">Total</th>
+                </xpath>
+                <xpath expr="//td[@name='td_option_name']" position="after">
+                    <td name="td_option_qty" class="text-right">
+                        <span t-field="option.quantity"/>
+                    </td>
+
+                </xpath>
+                <xpath expr="//td[@name='td_option_price_unit']" position="after">
+                    <td name="td_option_total" class="text-right">
+                        <t t-if="option.discount">
+                            <t t-esc="'%.2f' % ((1-option.discount / 100.0) * option.price_unit * option.quantity)"/>
+                        </t>
+                        <t t-else="">
+                            <t t-esc="'%.2f' % (option.price_unit * option.quantity)"/>
+                        </t>
+                    </td>
+
                 </xpath>
             </field>
         </record>

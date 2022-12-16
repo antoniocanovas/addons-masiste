@@ -50,28 +50,30 @@
                 </xpath>
                 <xpath expr="//p[@t-field='o.quotation_notes']" position="replace"/>
                 <xpath expr="//table[@class='table table-sm o_main_table']" position="replace">
-                    <t t-if="not o.print_quotation_lines">
-                        <table class="table table-sm o_main_table">
-                            <thead>
-                                <tr>
-                                    <th class="text-left"><strong>Product to Repair:</strong></th>
-                                    <th class="text-left"><strong>NS</strong></th>
+
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th class="text-left"><strong>Product to Repair:</strong></th>
+                                <th/>
+                                <th class="text-left" style="text-align: right;margin-right: 10px;padding-right:50px"><strong>NS</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="o.repair_line_ids">
+                                <tr t-foreach="o.repair_line_ids" t-as="line">
+                                    <td>
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td/>
+                                    <td style="padding-right:10px">
+                                        <span t-field="line.lot_id"/>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <t t-if="o.repair_line_ids">
-                                    <tr t-foreach="o.repair_line_ids" t-as="line">
-                                        <td>
-                                            <span t-field="line.name"/>
-                                        </td>
-                                        <td>
-                                            <span t-field="line.lot_id"/>
-                                        </td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                        </table>
-                    </t>
+                            </t>
+                        </tbody>
+                    </table>
+                    <br/>
                     <t t-if="o.print_quotation_lines">
                         <table class="table table-sm o_main_table">
                             <thead>
@@ -98,15 +100,19 @@
                                         <td class="text-right">
                                             <span t-field="line.product_qty"/>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <span t-field="line.product_uom_id"/>
                                         </td>
-                                        <td class="text-right">
-                                            <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
-                                        </td>
-                                        <td class="text-right">
-                                            <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
-                                        </td>
+                                        <t t-if="o.invoice_method != 'none'">
+                                            <td class="text-right">
+                                                <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
+                                            </td>
+                                        </t>
+                                        <t t-if="o.invoice_method != 'none'">
+                                            <td class="text-right">
+                                                <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
+                                            </td>
+                                        </t>
                                     </tr>
                                 </t>
                             </tbody>
