@@ -22,7 +22,7 @@
         <field name="model">hr.expense.line</field>
         <field name="arch" type="xml">
             <search string="Expense line detail Search">
-                <field name="employee_id" string="Empleado" filter_domain="[('employee', 'ilike', self)]"/>
+                <field name="employee_id" string="Empleado" filter_domain="[('employee_id', 'ilike', self)]"/>
                 <field name="type_id" string="Tipo" filter_domain="[('type_id', 'ilike', self)]"/>
                 <group string="Group By">
                     <filter string="Empleado" name="group_by_employee" domain="[]" context="{'group_by': 'employee_id'}"/>
