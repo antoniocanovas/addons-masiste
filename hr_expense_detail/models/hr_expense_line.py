@@ -22,3 +22,8 @@ class HrExpeseLine(models.Model):
                 name = record.type_id.name
             record.name = name
     name = fields.Char('Description', compute='get_name_from_type', readonly=False)
+
+    @api.depends('create_date')
+    def get_standard_amount(self):
+        self.standard_amount = self.type_id.amount
+    standard_amount = fields.Float('Estimated', store=True, readonly=True)
