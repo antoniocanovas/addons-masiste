@@ -12,7 +12,8 @@ class HrExpense(models.Model):
         for li in self.line_ids:
             total += li.amount
         self.line_amount = total
-    line_amount = fields.Float('Detail total', store=False, compute='get_lines_amount')
+    line_amount = fields.Float('Detail total', store=False, compute='get_lines_amount',
+                               help='Gasto real del empleado según la suma de las líneas.')
 
     @api.depends('line_ids.amount', 'line_ids')
     def get_lines_amount_estimation(self):
@@ -23,4 +24,10 @@ class HrExpense(models.Model):
             else:
                 total += li.amount
         self.market_amount = total
-    market_amount = fields.Float('Market estimation', store=False, compute='get_lines_amount_estimation')
+    market_amount = fields.Float('Market estimation', store=False, compute='get_lines_amount_estimation',
+                                 help='Este campo es informativo para mostrar el importe resultante de pagar las dietas'
+                                      'al precio pactado en convenio y si algún gasto es superior tenerlo en cuenta como'
+                                      'si se abonara al precio real de mercado. Ej: si la dieta es 15 y el gasto 12 el '
+                                      'resultado es 15.'
+                                      'Si la dieta son dos líneas cada una de 15 pero el gasto es 7 + 30 el resultado será'
+                                      '15 + 30 = 45.')
