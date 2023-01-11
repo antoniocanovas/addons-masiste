@@ -17,4 +17,20 @@
         <field name="type">tree</field>
     </record>
 
+    <record id="hr_expense_detail_line_search" model="ir.ui.view">
+        <field name="name">hr.expense.detail.line.search</field>
+        <field name="model">hr.expense.line</field>
+        <field name="arch" type="xml">
+            <search string="Expense line detail Search">
+                <field name="employee_id" string="Empleado" filter_domain="[('employee', 'ilike', self)]"/>
+                <field name="type_id" string="Tipo" filter_domain="[('type_id', 'ilike', self)]"/>
+                <group string="Group By">
+                    <filter string="Empleado" name="group_by_employee" domain="[]" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Tipo de gasto" name="group_by_type_id" domain="[]" context="{'group_by': 'type_id'}"/>
+                    <filter string="Fecha" name="groupby_date" domain="[]" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
 </odoo>
