@@ -23,14 +23,26 @@
                                     <span t-field="o.partner_id"/>
                                 </td>
                             </tr>
-                            <tr style="border-bottom:0pt ;border-top:0pt">
+                            <tr style="padding-top: 0;padding-bottom: 0;">
                                 <td class="text-left">
                                     <b><span>Team:</span></b>
                                     <span t-field="o.team_id"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Delegation:</span></b>
-                                    <span t-field="o.delegacion_id"/>
+                                    <b><span>Teléfono:</span></b>
+                                    <t t-if="o.partner_id.mobile">
+                                        <span t-field="o.partner_id.mobile"/>
+                                    </t>
+                                    <t t-elif="o.partner_id.phone">
+                                        <span t-field="o.partner_id.phone"/>
+                                    </t>
+
+                                    <t t-elif="o.parent_id.phone">
+                                        <span t-field="o.parent_id.phone"/>
+                                    </t>
+                                    <t t-elif="o.parent_id.mobile">
+                                        <span t-field="o.parent_id.mobile"/>
+                                    </t>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
@@ -39,8 +51,8 @@
                                     <span t-field="o.user_id"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Provincia:</span></b>
-                                    <span t-field="o.provincia_id"/>
+                                    <b><span>Delegation:</span></b>
+                                    <span t-field="o.delegacion_id"/>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
@@ -49,8 +61,8 @@
                                     <span t-field="o.priority"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Facturar a:</span></b>
-                                    <span t-field="o.partner_invoiced_id"/>
+                                    <b><span>Provincia:</span></b>
+                                    <span t-field="o.provincia_id"/>
                                 </td>
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
@@ -59,16 +71,24 @@
                                     <span t-field="o.create_date"/>
                                 </td>
                                 <td class="text-left">
-                                    <b><span>Proyecto:</span></b>
-                                    <span t-field="o.project_id"/>
+                                    <b><span>Facturar a:</span></b>
+                                    <span t-field="o.partner_invoiced_id"/>
                                 </td>
-
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
-
                                 <td class="text-left">
                                     <b><span>Assigned date:</span></b>
                                     <span t-field="o.assigned_date"/>
+                                </td>
+                                <td class="text-left">
+                                    <b><span>Proyecto:</span></b>
+                                    <span t-field="o.project_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom:0pt ;border-top:0pt">
+                                <td class="text-left">
+                                    <b><span>Channel:</span></b>
+                                    <span t-field="o.channel_id"/>
                                 </td>
                                 <td class="text-left">
                                     <b><span>Tarea:</span></b>
@@ -77,15 +97,13 @@
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
                                 <td class="text-left">
-                                    <b><span>Channel:</span></b>
-                                    <span t-field="o.channel_id"/>
+                                    <b><span>Stage:</span></b>
+                                    <span t-field="o.stage_id"/>
                                 </td>
-
                                 <td class="text-left">
                                     <b><span>Categoría:</span></b>
                                     <span t-field="o.category_id"/>
                                 </td>
-
                             </tr>
                             <tr style="border-bottom:0pt ;border-top:0pt">
                                 <td class="text-left">
