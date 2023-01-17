@@ -16,7 +16,7 @@
 
                 <xpath expr="//div[@t-if='doc.user_id.name']" position="after">
                     <div t-if="doc.user_id.partner_id.mobile" class="col-auto col-3 mw-100 mb-2">
-                        <strong>Teléfono:</strong>
+                        <strong>Phone:</strong>
                         <p class="m-0" t-field="doc.user_id.partner_id.mobile"/>
                     </div>
                 </xpath>
@@ -33,7 +33,7 @@
                             <span t-field="doc.partner_id.street"/><br/>
                             <span t-field="doc.partner_id.zip"/> <span t-field="doc.partner_id.state_id"/>
                             <span t-field="doc.partner_id.country_id"/><br/>
-                            CIF: <span t-field="doc.partner_id.vat"/><br/>
+                            VAT: <span t-field="doc.partner_id.vat"/><br/>
                         </div>
                     </t>
                 </xpath>
@@ -64,11 +64,11 @@
 
                 <xpath expr="//div[@id='informations']" position="inside">
                     <div t-if="doc.delegacion_id" class="col-auto col-3 mw-100 mb-2">
-                        <strong>Destino:</strong>
+                        <strong>Destination:</strong>
                         <p class="m-0" t-field="doc.delegacion_id.name"/>
                     </div>
                     <div t-if="doc.contacto_id" class="col-auto col-3 mw-100 mb-2">
-                        <strong>A/A:</strong>
+                        <strong>ATN:</strong>
                         <p class="m-0" t-field="doc.contacto_id.name"/>
                     </div>
 
@@ -93,8 +93,8 @@
                         <div style="text-align:left">
                             <h2 class="mt16">
                                 <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                                    <span t-if="doc.state not in ['draft','sent']">Pedido # </span>
-                                    <span t-if="doc.state in ['draft','sent']">Presupuesto # </span>
+                                    <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                                    <span t-if="doc.state in ['draft','sent']">Quotation # </span>
                                 </t>
                                 <t t-if="env.context.get('proforma', False) or is_pro_forma">
                                     <span>Pro-Forma # </span>
@@ -105,15 +105,15 @@
 
                         <div class="row mt32 mb32" id="informations">
                             <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
-                                <strong>Tu Referencia:</strong>
+                                <strong>Reference:</strong>
                                 <p class="m-0" t-field="doc.client_order_ref"/>
                             </div>
                             <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                                <strong>Fecha de Orden:</strong>
+                                <strong>Order Date:</strong>
                                 <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
                             </div>
                             <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
-                                <strong>Fecha de presupuesto:</strong>
+                                <strong>Quotation Date:</strong>
                                 <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
                             </div>
                         </div>

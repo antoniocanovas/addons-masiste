@@ -6,16 +6,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 10:05+0000\n"
-"PO-Revision-Date: 2022-02-17 11:06+0100\n"
+"POT-Creation-Date: 2023-01-17 11:28+0000\n"
+"PO-Revision-Date: 2023-01-17 12:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_purchaseorder_without_taxes_date_req
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid ""
+"<br/>\n"
+"                            VAT:"
+msgstr ""
+"<br/>\n"
+"                            CIF:"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "<span>Price</span>"
+msgstr "<span>Precio</span>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<span>Pro-Forma # </span>"
+msgstr "<span>Pro-Forma </span>"
 
 #. module: reports_masiste
 #: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
@@ -24,8 +44,100 @@ msgstr "Factura Proforma #"
 
 #. module: reports_masiste
 #: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
-msgid "<strong>Teléfono:</strong>"
+msgid "<strong>ATN:</strong>"
+msgstr "<strong>A/A:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<strong>Destination:</strong>"
+msgstr "<strong>Destino:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Fecha Factura:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha Pedido:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>Teléfono:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<strong>Quotation Date:</strong>"
+msgstr "<strong>Fecha de presupuesto:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referencia:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Origen:</strong>"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.account_invoice_report_due_list_custom
+msgid "Amount"
+msgstr "Importe"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Cancelled Invoice"
+msgstr "Factura cancelada"
+
+#. module: reports_masiste
+#: model:ir.model,name:reports_masiste.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Credit Note"
+msgstr "Rectificativa"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.account_invoice_report_due_list_custom
+msgid "Date Due"
+msgstr "Fecha vencimiento"
+
+#. module: reports_masiste
+#: model:ir.model.fields,field_description:reports_masiste.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Draft Invoice"
+msgstr "Factura borrador"
+
+#. module: reports_masiste
+#: model:ir.model.fields,field_description:reports_masiste.field_res_partner__name_printed
+#: model:ir.model.fields,field_description:reports_masiste.field_res_users__name_printed
+msgid "Empresa"
 msgstr ""
+
+#. module: reports_masiste
+#: model:ir.model.fields,field_description:reports_masiste.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: reports_masiste
+#: model:ir.model.fields,field_description:reports_masiste.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
 
 #. module: reports_masiste
 #: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
@@ -33,6 +145,41 @@ msgid "Order #"
 msgstr "Pedido #"
 
 #. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Payment Mode:"
+msgstr "MODO DE PAGO"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_inherit_sale_management_custom
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: reports_masiste
 #: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_without_taxes_lines
 msgid "Quotation #"
 msgstr "Presupuesto #"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.account_invoice_report_due_list_custom
+msgid "STATE: PAID"
+msgstr "ESTADO:PAGADO"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_saleorder_document_inherit_sale_management_custom
+msgid "Total"
+msgstr "Total"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "VAT"
+msgstr "CIF"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Vendor Bill"
+msgstr "Factura de proveedor"
+
+#. module: reports_masiste
+#: model_terms:ir.ui.view,arch_db:reports_masiste.report_accountmove_document_changes
+msgid "Vendor Credit Note"
+msgstr "Factura rectificativa de proveedor"

@@ -24,7 +24,7 @@
                             <span t-esc="o.partner_id.state_id.name"/><br/>
                             <div t-if="o.partner_id.vat" class="mt16">
                                 <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
-                                <t t-else="">CIF</t>: <span t-field="o.partner_id.vat"/>
+                                <t t-else="">VAT</t>: <span t-field="o.partner_id.vat"/>
                             </div>
                         </div>
                     </t>
@@ -43,28 +43,28 @@
                 <xpath expr="//t[@t-set='address']" position="after">
                     <t t-set="information_block">
                         <h2 class="mt16">
-                            <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Factura</span>
-                            <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Borrador de Factura</span>
-                            <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Factura Cancelada</span>
-                            <span t-if="o.move_type == 'out_refund'">Factura rectificativa</span>
-                            <span t-if="o.move_type == 'in_refund'">Factura rectificativa de Vendedor</span>
-                            <span t-if="o.move_type == 'in_invoice'">Factura para Vendedor</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                            <span t-if="o.move_type == 'out_refund'">Credit Note</span>
+                            <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
+                            <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
                             <span t-if="o.name != '/'" t-field="o.name"/>
                         </h2>
 
                         <div id="informations" class="row mt32 mb32">
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date" name="invoice_date">
-                                <strong>Fecha de Factura:</strong>
+                                <strong>Invoice Date:</strong>
                                 <p class="m-0" t-field="o.invoice_date"/>
                             </div>
 
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_origin" name="origin">
-                                <strong>Origen:</strong>
+                                <strong>Source:</strong>
                                 <p class="m-0" t-field="o.invoice_origin"/>
                             </div>
 
                             <div class="col-auto col-3 mw-100 mb-2" t-if="o.ref" name="reference">
-                                <strong>Referencia:</strong>
+                                <strong>Reference:</strong>
                                 <p class="m-0" t-field="o.ref"/>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <t t-if="o.payment_mode_id">
                     <!-- Cambio Antonio Cánovas 5/10/22 para quitar payment_state
                             MODO DE PAGO: <span t-field="o.payment_mode_id"/><span t-field="o.payment_state"/> -->
-                            MODO DE PAGO: <span t-field="o.payment_mode_id"/>
+                            Payment Mode: <span t-field="o.payment_mode_id"/>
                         </t>
                     </p>
                     <!--<p t-if="o.invoice_payment_term_id.note" name="payment_term">
@@ -99,7 +99,7 @@
 
                 <!-- Quita unitario de Líneas -->
                 <xpath expr="//t/t/div/table/thead/tr/th[@name='th_priceunit']" position="replace">
-                    <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Precio</span></th>
+                    <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Price</span></th>
                 </xpath>
 
             </field>
@@ -141,7 +141,7 @@
                     <t t-if="o.payment_state == 'paid'">
                         <p>
 
-                               ESTADO: PAGADO
+                               STATE: PAID
 
                         </p>
                     </t>
@@ -149,8 +149,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Vencimiento</th>
-                                    <th class="text-right">Importe</th>
+                                    <th>Date Due</th>
+                                    <th class="text-right">Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
