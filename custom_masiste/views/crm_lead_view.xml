@@ -25,4 +25,12 @@
             </field>
         </field>
     </record>
+
+    <!-- Quitar Dashboard como primera opción CRM, solicitado por Ventas 12/2022: -->
+    <record id="crm_dashboard.menu_crm_dashboard_new" model="ir.ui.menu">
+        <field name="parent_id" ref="crm.crm_menu_report"/>
+    </record>
+
+
+
 </odoo>
