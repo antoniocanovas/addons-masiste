@@ -15,7 +15,8 @@
                 'helpdesk_mgmt',
                 'partner_expired_debt',
                 'sale_order_lot_selection',
-                'crm_dashboard',],
+#                'crm_dashboard',
+                ],
     "data": [
         "views/crm_lead_view.xml",
         "views/sale_order_view.xml",
