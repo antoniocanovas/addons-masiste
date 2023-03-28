@@ -28,7 +28,7 @@
         <field name="inherit_id" ref="helpdesk_mgmt_timesheet.hr_timesheet_line_tree"/>
         <field name="arch" type="xml">
             <field name="ticket_id" position="attributes">
-                <attribute name="domain">[('project_id','=',project_id)]</attribute>
+                <attribute name="domain">[('task_id','=',task_id)]</attribute>
             </field>
         </field>
         <field name="priority">99</field>
