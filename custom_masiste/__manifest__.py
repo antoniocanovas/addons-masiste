@@ -13,6 +13,7 @@
                 'base_automation',
                 'sale_management',
                 'helpdesk_mgmt',
+                'helpdesk_mgmt_timesheet',
                 'partner_expired_debt',
                 'sale_order_lot_selection',
 #                'crm_dashboard',
