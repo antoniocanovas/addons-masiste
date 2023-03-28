@@ -12,6 +12,7 @@
     "depends": ['crm',
                 'base_automation',
                 'sale_management',
+                'purchase',
                 'helpdesk_mgmt',
                 'helpdesk_mgmt_timesheet',
                 'partner_expired_debt',
