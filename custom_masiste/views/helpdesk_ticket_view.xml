@@ -16,7 +16,9 @@
                 <field name="partner_expired_debt"/>
                 <field name="currency_id" invisible="1"/>
             </field>
-            <field name="partner_name" position="replace"/>
+            <field name="partner_name" position="attributes">
+                <attribute name="invisible" eval="True"/>
+            </field>
             <field name="partner_email" position="replace"/>
         </field>
         <field name="priority">99</field>
