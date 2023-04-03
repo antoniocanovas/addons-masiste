@@ -11,13 +11,10 @@
                 <field name="contacto_id" domain="[('type','=','contact'),('parent_id','!=',False),
                                             '|',('parent_id','=', partner_id),('parent_id','=',delegacion_id)]"/>
             </field>
+
             <!-- 2022/10 Solicitan que no se pueda modificar un pedido de venta completamente facturado: -->
             <xpath expr="//field[@name='order_line']" position="attributes">
                 <attribute name="attrs">{"readonly": ["|",["state","in",["done","cancel"]],["invoice_status","=","invoiced"]]}</attribute>
-            </xpath>
-            <!-- Solicitado por Ricardo 12/2022 para poder ocultar lot_id en línea de ventas: -->
-            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='lot_id']" position="attributes">
-                <attribute name="optional">show</attribute>
             </xpath>
         </field>
         <field name="priority">99</field>

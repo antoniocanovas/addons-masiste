@@ -25,15 +25,4 @@
             </field>
         </field>
     </record>
-
-    <!-- Quitar Dashboard como primera opción CRM, solicitado por Ventas 12/2022:
-    (eliminado 03/23 porque al confirmar presupuestos la oportunidad pasa a estaod indefinido,
-    la culpa es del módulo crm_dashboard:
-
-    <record id="crm.crm_menu_root" model="ir.ui.menu">
-        <field name="action" ref="crm.action_your_pipeline"/>
-    </record>
-    -->
-
-
 </odoo>

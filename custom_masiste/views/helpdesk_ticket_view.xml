@@ -22,16 +22,4 @@
         <field name="priority">99</field>
     </record>
 
-    <record id="helpdesk_timesheet_tree_masiste" model="ir.ui.view">
-        <field name="name">Masiste timesheet helpdesk Tree inh</field>
-        <field name="model">account.analytic.line</field>
-        <field name="inherit_id" ref="helpdesk_mgmt_timesheet.hr_timesheet_line_tree"/>
-        <field name="arch" type="xml">
-            <field name="ticket_id" position="attributes">
-                <attribute name="domain">[('task_id','=',task_id)]</attribute>
-            </field>
-        </field>
-        <field name="priority">99</field>
-    </record>
-
 </odoo>

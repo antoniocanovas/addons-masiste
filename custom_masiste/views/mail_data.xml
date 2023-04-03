@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <template id="message_user_assigned_custom" inherit_id="mail.message_user_assigned">
+        <xpath expr="//p[1]" position="after">
+            <t t-if="object._name == 'helpdesk.ticket'">
+                <span>Título: <t t-esc="object.sudo().name"/></span><br/>
+                <t t-if="object.partner_id">
+                    <span>Contacto: <t t-esc="object.sudo().partner_id.name"/> - <t t-esc="object.sudo().partner_id.phone"/> - <t t-esc="object.sudo().partner_id.mobile"/> </span><br/>
+                </t>
+                <t t-if="object.delegacion_id">
+                    <span>Delegación: <t t-esc="object.sudo().delegacion_id.name"/></span><br/>
+                </t>
+                <t t-if="object.project_id">
+                    <span>Proyecto: <t t-esc="object.sudo().project_id.name"/></span><br/>
+                </t>
+                <t t-if="object.task_id">
+                    <span>Tarea: <t t-esc="object.sudo().task_id.name"/></span><br/>
+                </t>
+                <t t-if="object.description">
+                    <span>Descripción: <t t-esc="object.sudo().description"/></span><br/>
+                </t>
+            </t>
+            <t t-if="object._name == 'project.task'">
+                <span>Título: <t t-esc="object.sudo().name"/></span><br/>
+                <t t-if="object.partner_id">
+                    <span>Contacto: <t t-esc="object.sudo().partner_id.name"/> - <t t-esc="object.sudo().partner_id.phone"/> - <t t-esc="object.sudo().partner_id.mobile"/> </span><br/>
+                </t>
+                <t t-if="object.sale_line_id">
+                    <span>Venta: <t t-esc="object.sudo().sale_line_id.name"/></span><br/>
+                </t>
+                <t t-if="object.project_id">
+                    <span>Proyecto: <t t-esc="object.sudo().project_id.name"/></span><br/>
+                </t>
+                <t t-if="object.date_deadline">
+                    <span>Fecha fin: <t t-esc="object.sudo().date_deadline"/></span><br/>
+                </t>
+                <t t-if="object.description">
+                    <span>Descripción: <t t-esc="object.sudo().description"/></span><br/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
