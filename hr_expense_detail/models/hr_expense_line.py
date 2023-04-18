@@ -25,5 +25,6 @@ class HrExpeseLine(models.Model):
 
     @api.depends('type_id')
     def get_standard_amount(self):
-        self.standard_amount = self.type_id.amount
+        for record in self:
+            record.standard_amount = record.type_id.amount
     standard_amount = fields.Float('Estimated', store=True, readonly=True, compute='get_standard_amount')
