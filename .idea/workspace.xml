@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="restore views masiste">
+    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="bug expenses detail save">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hr_expense_detail/views/hr_expense_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hr_expense_detail/views/hr_expense_views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
-    </task>
-    <task id="LOCAL-00006" summary="helpdesk facturar_a">
-      <created>1662568870203</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1662568870203</updated>
     </task>
     <task id="LOCAL-00007" summary="helpdesk facturar_a">
       <created>1662568997344</created>
@@ -419,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680563366641</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="bug expenses detail save">
+      <created>1681819731928</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1681819731929</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -455,17 +454,7 @@
     <MESSAGE value="crm dashboard error, remove module dependencies" />
     <MESSAGE value="timesheet ticket_id domain" />
     <MESSAGE value="restore views masiste" />
-    <option name="LAST_COMMIT_MESSAGE" value="restore views masiste" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="bug expenses detail save" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug expenses detail save" />
   </component>
 </project>
