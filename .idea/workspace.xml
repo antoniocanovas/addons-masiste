@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="bug hr_expense_line">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,27 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
-    </task>
-    <task id="LOCAL-00017" summary="sale_attachment in invoice v0">
-      <created>1663927005026</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1663927005026</updated>
-    </task>
-    <task id="LOCAL-00018" summary="sale_attachment in invoice v0">
-      <created>1663946233057</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663946233057</updated>
-    </task>
-    <task id="LOCAL-00019" summary="sale_attachment in invoice v0">
-      <created>1663947018852</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663947018852</updated>
     </task>
     <task id="LOCAL-00020" summary="sale_attachment in invoice v0">
       <created>1663947473588</created>
@@ -417,7 +397,28 @@
       <option name="project" value="LOCAL" />
       <updated>1691142945719</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="bug hr_expense_line">
+      <created>1691143053401</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1691143053402</updated>
+    </task>
+    <task id="LOCAL-00067" summary="bug hr_expense_line">
+      <created>1691143112182</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1691143112182</updated>
+    </task>
+    <task id="LOCAL-00068" summary="bug hr_expense_line">
+      <created>1691143200888</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1691143200888</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
