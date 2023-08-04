@@ -37,11 +37,11 @@
                                         <span t-field="o.partner_id.phone"/>
                                     </t>
 
-                                    <t t-elif="o.parent_id.phone">
-                                        <span t-field="o.parent_id.phone"/>
+                                    <t t-elif="o.partner_id.parent_id.phone">
+                                        <span t-field="o.partner_id.parent_id.phone"/>
                                     </t>
-                                    <t t-elif="o.parent_id.mobile">
-                                        <span t-field="o.parent_id.mobile"/>
+                                    <t t-elif="o.partner_id.parent_id.mobile">
+                                        <span t-field="o.partner_id.parent_id.mobile"/>
                                     </t>
                                 </td>
                             </tr>
