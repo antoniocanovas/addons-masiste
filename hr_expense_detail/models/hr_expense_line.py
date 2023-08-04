@@ -14,14 +14,16 @@ class HrExpeseLine(models.Model):
     date = fields.Date('Expense date', store=True, related='expense_id.date')
     employee_id = fields.Many2one('hr.employee', store=True, related='expense_id.employee_id')
 
-    @api.depends('type_id')
-    def get_name_from_type(self):
-        for record in self:
-            name = record.name
-            if record.type_id.name:
-                name = record.type_id.name
-            record.name = name
-    name = fields.Char('Description', compute='get_name_from_type', readonly=False)
+# La forma comentada no funciona, pruebo con valor por defecto:
+#    @api.depends('type_id')
+#    def get_name_from_type(self):
+#        for record in self:
+#            name = record.name
+#            if record.type_id.name:
+#                name = record.type_id.name
+#            record.name = name
+#    name = fields.Char('Description', compute='get_name_from_type', readonly=False)
+    name = fields.Char('Description', default = lambda self: self.type_id.name, translate = True)
 
     @api.depends('type_id')
     def get_standard_amount(self):
