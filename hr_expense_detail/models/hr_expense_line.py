@@ -18,6 +18,7 @@ class HrExpeseLine(models.Model):
     def get_name_from_type(self):
         for record in self:
             record.name = record.type_id.name
+            self.env.cr.commit()
     name = fields.Char('Description', compute='get_name_from_type', readonly=False)
 
     @api.depends('type_id')
