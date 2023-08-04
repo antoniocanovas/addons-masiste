@@ -14,7 +14,7 @@ class HrExpeseLine(models.Model):
     date = fields.Date('Expense date', store=True, related='expense_id.date')
     employee_id = fields.Many2one('hr.employee', store=True, related='expense_id.employee_id')
 
-    @api.onchange('type_id')
+    @api.depends('type_id')
     def get_name_from_type(self):
         for record in self:
             record.name = record.type_id.name
