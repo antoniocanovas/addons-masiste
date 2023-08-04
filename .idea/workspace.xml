@@ -74,20 +74,6 @@
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
     </task>
-    <task id="LOCAL-00015" summary="helpdesk partner_expired_debt">
-      <created>1662626506436</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1662626506436</updated>
-    </task>
-    <task id="LOCAL-00016" summary="helpdesk partner_expired_debt">
-      <created>1662626594428</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1662626594428</updated>
-    </task>
     <task id="LOCAL-00017" summary="sale_attachment in invoice v0">
       <created>1663927005026</created>
       <option name="number" value="00017" />
@@ -417,7 +403,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691141370050</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="bug hr_expense_line">
+      <created>1691142742595</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1691142742595</updated>
+    </task>
+    <task id="LOCAL-00065" summary="bug hr_expense_line">
+      <created>1691142945719</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1691142945719</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
