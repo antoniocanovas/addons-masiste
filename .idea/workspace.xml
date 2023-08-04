@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="sale line limit 200">
+    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="bug hr_expense_line">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/hr_expense_detail/models/hr_expense_line.py" afterDir="false" />
     </list>
@@ -74,13 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
-    </task>
-    <task id="LOCAL-00010" summary="helpdesk facturar_a">
-      <created>1662569794195</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1662569794195</updated>
     </task>
     <task id="LOCAL-00011" summary="helpdesk partner_expired_debt">
       <created>1662625729187</created>
@@ -418,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687624824141</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="bug hr_expense_line">
+      <created>1691137174745</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1691137174745</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -457,6 +457,7 @@
     <MESSAGE value="bug expenses detail save" />
     <MESSAGE value="Expenses tree paid / market" />
     <MESSAGE value="sale line limit 200" />
-    <option name="LAST_COMMIT_MESSAGE" value="sale line limit 200" />
+    <MESSAGE value="bug hr_expense_line" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug hr_expense_line" />
   </component>
 </project>
