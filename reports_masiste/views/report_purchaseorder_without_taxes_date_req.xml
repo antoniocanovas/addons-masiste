@@ -24,7 +24,7 @@
                         <div>
                             <strong><span t-field="o.partner_id.name_printed"/> </strong><br/>
                             <span t-field="o.partner_id.street"/><br/>
-                            <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.state_id"/>
+                            <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.state_id"/> <span t-field="doc.partner_id.city"/>
                             <span t-field="o.partner_id.country_id"/><br/>
                             VAT: <span t-field="o.partner_id.vat"/><br/>
                         </div>
