@@ -42,7 +42,7 @@
 
         <record id="report_delivery_document_custom" model="ir.ui.view">
             <field name="name">Añadir campo localidad</field>
-            <field name="inherit_id" ref="stock.stock_report_delivery_aggregated_move_lines"/>
+            <field name="inherit_id" ref="stock.report_delivery_document"/>
             <field name="arch" type="xml">
                 <xpath expr="//t[@t-set='address']" position="replace">
                     <div style="float:right;">
