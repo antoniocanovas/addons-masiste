@@ -40,5 +40,24 @@
             </field>
         </record>
 
+        <record id="report_delivery_document_custom" model="ir.ui.view">
+            <field name="name">Añadir campo localidad</field>
+            <field name="inherit_id" ref="stock.report_delivery_document"/>
+            <field name="arch" type="xml">
+                <xpath expr="//t[@t-set='address']" position="replace">
+                    <div style="float:right;">
+                        <div style="max-width:600px">
+                            <strong><span t-field="o.partner_id" style="font-weight: 900;word-break: break-all;font-size:16px;"/></strong><br/>
+                            <span t-field="o.partner_id.street"/><br/>
+                            <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/> <span t-field="o.partner_id.state_id"/>,
+                            <span t-field="o.partner_id.country_id"/><br/>
+                            <span t-field="o.partner_id.phone" t-options="{&quot;phone_icons&quot;: True}"/><br/>
+                            NIF: <span t-field="o.partner_id.vat"/><br/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>
