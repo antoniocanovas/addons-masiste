@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="bug hr_expense_line">
-      <change afterPath="$PROJECT_DIR$/custom_masiste/views/mrp_bom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_masiste/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/__manifest__.py" afterDir="false" />
+    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="200 bom lines">
+      <change beforePath="$PROJECT_DIR$/custom_masiste/views/mrp_bom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/mrp_bom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
-    </task>
-    <task id="LOCAL-00021" summary="sale_attachment in invoice v0">
-      <created>1663947578829</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1663947578829</updated>
     </task>
     <task id="LOCAL-00022" summary="sale_attachment in invoice v0">
       <created>1663948440731</created>
@@ -427,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691148856430</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="200 bom lines">
+      <created>1697559988008</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1697559988008</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="helpdesk delegacion_id" />
     <MESSAGE value="helpdesk facturar_a" />
     <MESSAGE value="helpdesk partner_expired_debt" />
     <MESSAGE value="sale_attachment in invoice v0" />
@@ -467,7 +464,8 @@
     <MESSAGE value="Expenses tree paid / market" />
     <MESSAGE value="sale line limit 200" />
     <MESSAGE value="bug hr_expense_line" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug hr_expense_line" />
+    <MESSAGE value="200 bom lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="200 bom lines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
