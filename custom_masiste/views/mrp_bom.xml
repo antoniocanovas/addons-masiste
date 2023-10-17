@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="mrp.mrp_bom_form_masiste_view" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Solicitan 200 líneas en lista de productos bom: -->
+            <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree" position="attribures">
+                <attribute name="limit">200</attribute>/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

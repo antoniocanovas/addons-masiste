@@ -17,6 +17,7 @@
                 'helpdesk_mgmt_timesheet',
                 'partner_expired_debt',
                 'sale_order_lot_selection',
+                'mrp',
 #                'crm_dashboard',
                 ],
     "data": [
@@ -26,6 +27,7 @@
         "views/product_view.xml",
         "views/res_partner.xml",
         "views/mail_data.xml",
+        "views/mrp_bom.xml",
         "data/action_server.xml",
     ],
     "installable": True,
