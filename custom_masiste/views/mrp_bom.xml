@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <!-- Solicitan 200 líneas en lista de productos bom: -->
-            <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree" position="attribures">
+            <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree" position="attributes">
                 <attribute name="limit">200</attribute>
             </xpath>
         </field>
