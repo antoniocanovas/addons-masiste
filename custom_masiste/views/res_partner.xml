@@ -10,6 +10,9 @@
             <field name="team_id" position="after">
                 <field name="expired_debt" groups="sales_team.group_sale_salesman"/>
             </field>
+            <field name="vat" position="after">
+                <field name="maps" widget="url"/>
+            </field>
         </field>
     </record>
 </odoo>
