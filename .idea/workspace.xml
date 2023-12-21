@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="200 bom lines">
-      <change afterPath="$PROJECT_DIR$/custom_masiste/models/project_project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_masiste/views/project_project_views.xml" afterDir="false" />
+    <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="req1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_masiste/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_masiste/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -434,7 +434,7 @@
       <option name="project" value="LOCAL" />
       <updated>1697560648439</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,8 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="helpdesk facturar_a" />
-    <MESSAGE value="helpdesk partner_expired_debt" />
     <MESSAGE value="sale_attachment in invoice v0" />
     <MESSAGE value="Mod Encarna 5-10-22" />
     <MESSAGE value="Ventas sede por destino" />
@@ -474,7 +472,9 @@
     <MESSAGE value="sale line limit 200" />
     <MESSAGE value="bug hr_expense_line" />
     <MESSAGE value="200 bom lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="200 bom lines" />
+    <MESSAGE value="project technical user" />
+    <MESSAGE value="req1" />
+    <option name="LAST_COMMIT_MESSAGE" value="req1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

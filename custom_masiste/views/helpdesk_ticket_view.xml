@@ -22,6 +22,9 @@
             <field name="partner_email" position="attributes">
                 <attribute name="invisible" eval="True"/>
             </field>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="options">{'always_reload': True, 'no_create_edit': True, 'no_quick_create':True}</attribute>
+            </xpath>
         </field>
         <field name="priority">99</field>
     </record>
