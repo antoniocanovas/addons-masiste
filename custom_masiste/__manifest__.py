@@ -28,6 +28,7 @@
         "views/res_partner.xml",
         "views/mail_data.xml",
         "views/mrp_bom.xml",
+        "views/project_project_views.xml",
         "data/action_server.xml",
     ],
     "installable": True,

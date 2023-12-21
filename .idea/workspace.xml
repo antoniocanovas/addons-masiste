@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="200 bom lines">
-      <change beforePath="$PROJECT_DIR$/custom_masiste/views/mrp_bom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/mrp_bom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_masiste/models/project_project.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_masiste/views/project_project_views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_masiste/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_masiste/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/models/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +34,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2ECkgPySo1dYBJnsh1gAEe8ccoT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,17 +44,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/custom_masiste/views" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "14.0",
+    "last_opened_file_path": "/Users/antoniocanovaspedreno/PycharmProjects/addons-masiste/custom_masiste/views"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/custom_masiste/views" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/custom_masiste/models" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,34 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662107063933</updated>
-    </task>
-    <task id="LOCAL-00022" summary="sale_attachment in invoice v0">
-      <created>1663948440731</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1663948440731</updated>
-    </task>
-    <task id="LOCAL-00023" summary="sale_attachment in invoice v0">
-      <created>1663948598503</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1663948598503</updated>
-    </task>
-    <task id="LOCAL-00024" summary="sale_attachment in invoice v0">
-      <created>1663949192430</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1663949192430</updated>
-    </task>
-    <task id="LOCAL-00025" summary="sale_attachment in invoice v0">
-      <created>1663949495792</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1663949495792</updated>
     </task>
     <task id="LOCAL-00026" summary="Mod Encarna 5-10-22">
       <created>1664987788411</created>
@@ -425,7 +406,35 @@
       <option name="project" value="LOCAL" />
       <updated>1697559988008</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="200 bom lines">
+      <created>1697560356941</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1697560356941</updated>
+    </task>
+    <task id="LOCAL-00072" summary="200 bom lines">
+      <created>1697560403865</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1697560403865</updated>
+    </task>
+    <task id="LOCAL-00073" summary="200 bom lines">
+      <created>1697560446103</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1697560446103</updated>
+    </task>
+    <task id="LOCAL-00074" summary="200 bom lines">
+      <created>1697560648439</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1697560648439</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
