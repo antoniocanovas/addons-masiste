@@ -145,25 +145,25 @@
 
                         </p>
                     </t>
-                    <t t-if="o.payment_state != 'paid'">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Date Due</th>
-                                    <th class="text-right">Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr t-foreach="due_list" t-as="due_tuple">
-                                    <td>
-                                        <span t-esc="due_tuple[0]" t-options="{'widget': 'date'}"/>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-esc="due_tuple[1]" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                   <t t-if="o.payment_state != 'paid'">
+                         <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date Due</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="due_list" t-as="due_tuple">
+                                <td>
+                                    <span t-esc="due_tuple[0]" t-options="{'widget': 'date'}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="due_tuple[2]" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     </t>
 
                 </xpath>
