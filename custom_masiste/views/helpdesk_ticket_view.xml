@@ -26,7 +26,9 @@
                 <attribute name="options">{'always_reload': True, 'no_create_edit': True, 'no_quick_create':True}</attribute>
             </xpath>
             <field name="description" position="before">
+                <h3>Notas internas:</h3>
                 <field name="internal_note" widget="html" placeholder="Internal notes ..."/>
+                <h3>Descripción pública:</h3>
             </field>
         </field>
         <field name="priority">99</field>
