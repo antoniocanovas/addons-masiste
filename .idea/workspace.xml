@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0d5f325-0129-443e-8c23-1c991f7d71d5" name="Changes" comment="req1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_masiste/views/helpdesk_ticket_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +33,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ECkgPySo1dYBJnsh1gAEe8ccoT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,18 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "14.0",
-    "last_opened_file_path": "/Users/antoniocanovaspedreno/PycharmProjects/addons-masiste/custom_masiste/views"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;14.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/antoniocanovaspedreno/PycharmProjects/addons-masiste&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/custom_masiste/views" />
       <recent name="$PROJECT_DIR$/custom_masiste/models" />
+      <recent name="$PROJECT_DIR$/custom_masiste/views" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -434,7 +433,7 @@
       <option name="project" value="LOCAL" />
       <updated>1697560648439</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
