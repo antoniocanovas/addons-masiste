@@ -15,4 +15,4 @@ class HelpdeskTicket(models.Model):
     partner_invoiced_id = fields.Many2one('res.partner', string='Facturar a', store=True)
     partner_expired_debt = fields.Monetary(related='partner_invoiced_id.expired_debt', string='Expired due', store=False)
     currency_id = fields.Many2one('res.currency', string='currency', default=1)
-    internal_note = fields.Text('Internal notes')
+    internal_note = fields.Text('Internal notes', tracking=True)
