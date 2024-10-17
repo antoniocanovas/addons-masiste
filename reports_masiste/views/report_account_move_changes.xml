@@ -112,14 +112,14 @@
 
                 <xpath expr="//div[@class='pt-5']" position="replace">
                     <t t-if="not o" t-set="o" t-value="doc"/>
-                    <t t-if="o._name == 'account.move'">
+                    <t t-if="o and o._name == 'account.move'">
                         <div>
                             <!-- This div ensures that the address is not cropped by the header. -->
                             <t t-call="web.address_layout"/>
 
                         </div>
                     </t>
-                    <t t-if="not o._name == 'account.move'">
+                    <t t-else="">
                         <div class="pt-5">
                             <!-- This div ensures that the address is not cropped by the header. -->
                             <t t-call="web.address_layout"/>

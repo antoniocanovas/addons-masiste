@@ -11,7 +11,8 @@
     "license": "AGPL-3",
     "depends": ['sale', 'stock', 'account_payment_mode',
                 'purchase', 'base_comment_template',
-                'sale_comment_template', 'custom_masiste',
+                'sale_comment_template',
+                'custom_masiste',
                 'account_invoice_report_due_list', 'hr_expense',],
     "data": [
         "views/report_account_move_without_taxes.xml",
